@@ -1,0 +1,21 @@
+{
+  "name": "readiness-platform-importer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Krishna Ali",
+  "description": "Readiness Platform Importer",
+  "repository": {
+    "type": "git",
+    "url": "https://"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "netcdfjs": "^0.3.1",
+    "node-find-files": "^0.0.4"
+  },
+  "devDependencies": {}
+}
