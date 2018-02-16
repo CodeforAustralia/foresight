@@ -5,6 +5,7 @@ This is the repository for the readiness platform being developed by Code for Au
 The repository contains several different services which should be able to operate independently from each other. Current services:
 
 - **Importer** - imports and processes data
+- **Interface** - displays the map
 
 ## Running locally
 
