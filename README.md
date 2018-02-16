@@ -1,12 +1,12 @@
-# 🔥 Readiness Platform
+# Readiness Platform
 
 This is the repository for the readiness platform being developed by Code for Australia with Predictive Services.
 
 The repository contains several different services which should be able to operate independently from each other. Current services:
 
-- 🔥📥 **Importer** - imports and processes data
+- **Importer** - imports and processes data
 
-## 💻 Running locally
+## Running locally
 
 Each service within this repository has its own `README.md` with instructions on running it locally.
 
@@ -15,11 +15,11 @@ General requirements:
 - [NPM](https://www.npmjs.com/)
 - [Yarn](https://yarnpkg.com/en/)
 
-## ⛅️ Deployment
+## Deployment
 
 There are currently no deployment environments for this repository. It is intended that it will be deployed to the Horizon environment.
 
-## 🌱 Contributing
+## Contributing
 
 The contribution style we are using is [trunk based development](https://trunkbaseddevelopment.com/). This means:
 
