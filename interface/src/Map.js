@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import L from 'leaflet';
 // postCSS import of Leaflet's CSS
 import 'leaflet/dist/leaflet.css';
-
-// [-37.3848726037, 144.324611577],
-// 'http://maps.em.vic.gov.au/tms_cache/wm_mapscape_greyscale_ed5/{z}/{x}/{y}.png'
+import './Map.css';
 
 let config = {};
 
@@ -24,7 +22,7 @@ config.tileLayer = {
   uri: 'http://maps.em.vic.gov.au/tms_cache/wm_mapscape_greyscale_ed5/{z}/{x}/{y}.png',
   params: {
     minZoom: 7,
-    attribution: '&copy; Emergency Management Victoria',
+    attribution: 'Vicmap Book by Spatial Vision Greyscale',
     id: '',
     accessToken: ''
   }
@@ -48,8 +46,6 @@ class Map extends Component {
 
   componentDidMount() {
     // code to run just after the component "mounts" / DOM elements are created
-    // we could make an AJAX request for the GeoJSON data here if it wasn't stored locally
-    this.getData();
     // create the Leaflet map object
     if (!this.state.map) this.init(this._mapNode);
   }
@@ -61,28 +57,9 @@ class Map extends Component {
     this.state.map.remove();
   }
 
-  getData() {
-    // could also be an AJAX request that results in setting state with the geojson data
-    // for simplicity sake we are just importing the geojson data using webpack's json loader
-  }
-
 
   updateMap(e) {
   }
-
-  zoomToFeature(target) {
-    // pad fitBounds() so features aren't hidden under the Filter UI element
-    var fitBoundsParams = {
-      paddingTopLeft: [200,10],
-      paddingBottomRight: [10,10]
-    };
-    // set the map's center & zoom so that it fits the geographic extent of the layer
-    this.state.map.fitBounds(target.getBounds(), fitBoundsParams);
-  }
-
-  filterFeatures(feature, layer) {
-  }
-
 
   init(id) {
     if (this.state.map) return;
@@ -99,7 +76,6 @@ class Map extends Component {
   }
 
   render() {
-    const { subwayLinesFilter } = this.state;
     return (
       <div id="mapUI">
         <div ref={(node) => this._mapNode = node} id="map" />

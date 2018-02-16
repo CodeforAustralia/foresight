@@ -1,0 +1,5 @@
+#root, #map, #mapUI {
+  width: inherit;
+  height: inherit;
+  background-color: #000;
+}
