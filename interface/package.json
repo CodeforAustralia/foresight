@@ -1,0 +1,14 @@
+{
+  "name": "readiness-platform-interface",
+  "version": "0.0.1",
+  "description": "The interface for the readiness platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Merrin Macleod",
+  "license": "MIT",
+  "dependencies": {
+    "react-leaflet": "^1.8.0"
+  }
+}
