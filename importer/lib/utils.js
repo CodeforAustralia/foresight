@@ -57,7 +57,7 @@ module.exports.decompress = (src, dest) => {
 			// callback on extract completion
 			output.on('close', () => {
 				console.log("Unzipped " + src);
-				resolve();
+				resolve({ src, dest });
 			});
 		}
 		else {

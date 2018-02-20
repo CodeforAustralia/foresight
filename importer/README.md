@@ -6,9 +6,10 @@ This service imports data in a [NetCDF](https://www.unidata.ucar.edu/software/ne
 
 Requirements:
 
-- [Node.JS](https://nodejs.org/en/)
-- [NPM](https://www.npmjs.com/)
+- [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/en/)
+- [Docker](https://www.docker.com/)
 
-1. Install dependencies with `yarn install`.
-2. `yarn run start`
+1. Follow setup instructions [Setup](../setup/README.md)
+2. Install dependencies with `yarn install`.
+3. `yarn run start`

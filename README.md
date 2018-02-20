@@ -13,8 +13,28 @@ Each service within this repository has its own `README.md` with instructions on
 
 General requirements:
 
+- [Node](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/)
 - [Yarn](https://yarnpkg.com/en/)
+- [Docker](https://www.docker.com/)
+
+Deploying locally:
+
+1. Follow setup instructions [Setup](setup/README.md)
+2. Initialise docker swarm.
+
+`docker swarm init`
+
+3. Deploy all services on the platform.
+
+`docker stack deploy -c docker-compose.yml readiness-platform`
+
+4. To stop the platform.
+
+`docker stack rm readiness-platform`
+
+`docker swarm leave --force`
+
 
 ## Deployment
 
