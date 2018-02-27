@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import Map from './Map';
+import Map from './components/Map';
+import Nav from './components/Nav';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <Map />
+      <div class="full-width">
+        <Nav />
+        <Map />
+      </div>
     );
   }
 }
