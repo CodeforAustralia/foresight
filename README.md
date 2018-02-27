@@ -1,11 +1,13 @@
-# Readiness Platform
+# Foresight
 
 This is the repository for the readiness platform being developed by Code for Australia with Predictive Services.
 
 The repository contains several different services which should be able to operate independently from each other. Current services:
 
-- **Importer** - imports and processes data
+- **Geoserver** - serves the wms/wfs data
+- **API** - serves the restful json data
 - **Interface** - displays the map
+
 
 ## Running locally
 
@@ -20,18 +22,16 @@ General requirements:
 
 Deploying locally:
 
-1. Follow setup instructions [Setup](setup/README.md)
-2. Initialise docker swarm.
+- Change to the platform's root folder.
+- Follow setup instructions [Setup](setup/README.md)
+- Initialise docker swarm.
 
 `docker swarm init`
 
-3. Deploy all services on the platform.
+- Use service read me files for instructions on individual services.
 
-`docker stack deploy -c docker-compose.yml readiness-platform`
 
-4. To stop the platform.
-
-`docker stack rm readiness-platform`
+Shutting Deployment:
 
 `docker swarm leave --force`
 
