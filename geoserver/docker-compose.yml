@@ -3,7 +3,7 @@ version: "3"
 services:
 
   geoserver:
-        image: kartoza/geoserver:2.12.0
+        image: foresight/geoserver:2.12.1
         deploy:
           resources:
             limits:

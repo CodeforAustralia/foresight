@@ -21,10 +21,16 @@ All the paths are relative to the project folder.
 
 ## Geoserver
 
+- Requires a geoserver docker image
+
+`cd setup/geoserver`
+
+`./build.sh`
+
 - Requires a gsdata directory
 
-`./gsdata`
+`geoserver/gsdata`
 
 - Mounted in the docker container as
 
-`./gsdata:/opt/geoserver/data_dir`
+`geoserver/gsdata:/opt/geoserver/data_dir`
