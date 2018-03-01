@@ -1,0 +1,15 @@
+<layer>
+  <name>T_SFC</name>
+  <id>LayerInfoImpl-3444ee3:161dfc40ed3:-7e8a</id>
+  <type>RASTER</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-3444ee3:161dfc40ed3:-7e8c</id>
+  </defaultStyle>
+  <resource class="coverage">
+    <id>CoverageInfoImpl-3444ee3:161dfc40ed3:-7e8b</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>
