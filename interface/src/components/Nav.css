@@ -9,6 +9,10 @@
   width: 100%;
   z-index: 999;
 }
+.nav__room {
+  padding-top: 60px;
+  height: calc(100% - 60px);
+}
 .nav__logo {
   background-image: url("../assets/logo-1.png");
   width: 150px;

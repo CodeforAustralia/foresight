@@ -4,8 +4,8 @@ import './Nav.css';
 class Nav extends Component {
   render() {
     return (
-      <div class="nav">
-        <div class="nav__logo"></div>
+      <div className="nav">
+        <div className="nav__logo"></div>
       </div>
     );
   }

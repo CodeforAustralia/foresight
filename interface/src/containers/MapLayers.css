@@ -1,0 +1,7 @@
+#root, #map {
+  width: inherit;
+  height: 100%;
+}
+#mapUI {
+  height: 100%;
+}

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import Map from './components/Map';
 import Nav from './components/Nav';
+import ToggleLayers from './containers/ToggleLayers'
+import MapLayers from './containers/MapLayers'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div class="full-width">
+      <div className="full-width nav__room">
+        <ToggleLayers />
         <Nav />
-        <Map />
+        <MapLayers />
       </div>
     );
   }
