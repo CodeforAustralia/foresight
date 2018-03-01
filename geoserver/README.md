@@ -18,12 +18,15 @@ Geoserver landing page
 
 ### Deploying GS
 
+1. Copy the data files to data directory.
 
-1. Deploy geoserver stack on the platform.
+`gsdata/data/netcdf/T_SFC.nc`
+`gsdata/data/netcdf/*`
+
+2. Deploy geoserver stack on the platform.
 
 `docker stack deploy -c docker-compose.yml foresight-gs`
 
-2. To stop the platform.
+3. To stop the platform.
 
 `docker stack rm foresight-gs`
-
