@@ -1,0 +1,13 @@
+[
+  {
+    "displayName": "Surface temperature",
+    "shortName": "xyz",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:T_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  }
+]

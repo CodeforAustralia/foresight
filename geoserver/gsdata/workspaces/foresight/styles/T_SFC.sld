@@ -13,13 +13,16 @@
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
             <ColorMap>
-              <ColorMapEntry color="#23dae7" quantity="0" label="0 - 10" />
-              <ColorMapEntry color="#69f2b7" quantity="10" label="10 - 20" />
-              <ColorMapEntry color="#81f785" quantity="20" label="20 - 30" />
-              <ColorMapEntry color="#f5f35e" quantity="30" label="30 - 40" />
-              <ColorMapEntry color="#f0b158" quantity="40" label="40 - 50" />
-              <ColorMapEntry color="#dd6423" quantity="50" label="50 - 60" />
-              <ColorMapEntry color="#ca0020" quantity="60" label="60+" />
+              <ColorMapEntry color="#23dae7" quantity="0" label="0 - 5" />
+              <ColorMapEntry color="#69f2b7" quantity="5" label="5 - 10" />
+              <ColorMapEntry color="#81f785" quantity="10" label="10 - 15" />
+              <ColorMapEntry color="#f5f35e" quantity="15" label="15 - 20" />
+              <ColorMapEntry color="#f0b158" quantity="20" label="20 - 25" />
+              <ColorMapEntry color="#dd6423" quantity="25" label="25 - 30" />
+              <ColorMapEntry color="#ca0020" quantity="30" label="30 - 35" />
+              <ColorMapEntry color="#cc0064" quantity="35" label="35 - 40" />
+              <ColorMapEntry color="#a51c9e" quantity="40" label="40 - 45" />
+              <ColorMapEntry color="#6c1ca5" quantity="45" label="45" />
             </ColorMap>
           </RasterSymbolizer>
         </Rule>

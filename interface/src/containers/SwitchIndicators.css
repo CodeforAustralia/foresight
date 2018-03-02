@@ -1,0 +1,29 @@
+.c-switch_indicators {
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  padding: 1em;
+  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
+}
+
+.c-switch_indicators__heading {
+  margin-top: 0;
+}
+
+.c-switch_indicators__legend {
+  margin-right: 0.5em;
+}
+
+.c-switch_indicators__input{
+  display: none;
+}
+.c-switch_indicators__label::before {
+  content: "⚪️"
+}
+input[type="checkbox"]:checked+.c-switch_indicators__label {
+  font-weight: bold;
+}
+input[type="checkbox"]:checked+.c-switch_indicators__label::before {
+  content: "🔘"
+}
