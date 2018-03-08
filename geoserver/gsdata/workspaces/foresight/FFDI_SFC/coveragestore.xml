@@ -1,0 +1,12 @@
+<coverageStore>
+  <id>CoverageStoreInfoImpl-44dcad7b:161e4a78498:-7f14</id>
+  <name>FFDI_SFC</name>
+  <description>FFDI_SFC data</description>
+  <type>NetCDF</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-3444ee3:161dfc40ed3:-7ffc</id>
+  </workspace>
+  <__default>false</__default>
+  <url>file:data/netcdf/FFDI_SFC.nc</url>
+</coverageStore>

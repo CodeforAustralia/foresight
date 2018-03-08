@@ -1,0 +1,15 @@
+<layer>
+  <name>DF_SFC</name>
+  <id>LayerInfoImpl-1fa8b3d1:1620313ae2c:-7d8e</id>
+  <type>RASTER</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-1fa8b3d1:1620313ae2c:-7e7e</id>
+  </defaultStyle>
+  <resource class="coverage">
+    <id>CoverageInfoImpl-1fa8b3d1:1620313ae2c:-7d8f</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>
