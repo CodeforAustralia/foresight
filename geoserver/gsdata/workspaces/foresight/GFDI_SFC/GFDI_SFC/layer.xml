@@ -1,0 +1,15 @@
+<layer>
+  <name>GFDI_SFC</name>
+  <id>LayerInfoImpl-1fa8b3d1:1620313ae2c:-7afe</id>
+  <type>RASTER</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-1fa8b3d1:1620313ae2c:-7e7c</id>
+  </defaultStyle>
+  <resource class="coverage">
+    <id>CoverageInfoImpl-1fa8b3d1:1620313ae2c:-7aff</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>
