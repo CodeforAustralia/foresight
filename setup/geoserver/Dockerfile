@@ -117,3 +117,6 @@ RUN if [ "$TOMCAT_EXTRAS" = false ]; then \
 
 # Delete resources after installation
 RUN rm -rf /tmp/resources
+
+# Customise geoserver tomcat setup
+COPY web.xml $CATALINA_HOME/webapps/geoserver/WEB-INF/
