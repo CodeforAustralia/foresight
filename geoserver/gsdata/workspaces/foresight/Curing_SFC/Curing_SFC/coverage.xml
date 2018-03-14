@@ -1,0 +1,125 @@
+<coverage>
+  <id>CoverageInfoImpl--275f02ac:16222962da5:-7fe5</id>
+  <name>Curing_SFC</name>
+  <nativeName>Curing_SFC</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3444ee3:161dfc40ed3:-7ffb</id>
+  </namespace>
+  <title>Curing_SFC</title>
+  <description>Generated from NetCDF</description>
+  <abstract>Curing bom data</abstract>
+  <keywords>
+    <string>Curing_SFC</string>
+    <string>WCS</string>
+    <string>NetCDF</string>
+  </keywords>
+  <nativeCRS>GEOGCS[&quot;WGS 84&quot;, 
+  DATUM[&quot;World Geodetic System 1984&quot;, 
+    SPHEROID[&quot;WGS 84&quot;, 6378137.0, 298.257223563, AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]], 
+    AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]], 
+  PRIMEM[&quot;Greenwich&quot;, 0.0, AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]], 
+  UNIT[&quot;degree&quot;, 0.017453292519943295], 
+  AXIS[&quot;Geodetic longitude&quot;, EAST], 
+  AXIS[&quot;Geodetic latitude&quot;, NORTH], 
+  AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]</nativeCRS>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>140.8879867553711</minx>
+    <maxx>151.05409088134766</maxx>
+    <miny>-39.76999832100885</miny>
+    <maxy>-33.929998627233346</maxy>
+    <crs>EPSG:4326</crs>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>140.8879867553711</minx>
+    <maxx>151.05409088134766</maxx>
+    <miny>-39.76999832100885</miny>
+    <maxy>-33.929998627233346</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>REPROJECT_TO_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="elevation">
+      <dimensionInfo>
+        <enabled>false</enabled>
+      </dimensionInfo>
+    </entry>
+    <entry key="time">
+      <dimensionInfo>
+        <enabled>true</enabled>
+        <presentation>LIST</presentation>
+        <units>ISO8601</units>
+        <defaultValue/>
+      </dimensionInfo>
+    </entry>
+    <entry key="cachingEnabled">false</entry>
+    <entry key="dirName">Curing_SFC_Curing_SFC</entry>
+  </metadata>
+  <store class="coverageStore">
+    <id>CoverageStoreInfoImpl--275f02ac:16222962da5:-7ff8</id>
+  </store>
+  <nativeFormat>NetCDF</nativeFormat>
+  <grid dimension="2">
+    <range>
+      <low>0 0</low>
+      <high>341 292</high>
+    </range>
+    <transform>
+      <scaleX>0.0298126220703125</scaleX>
+      <scaleY>-0.019999998951285975</scaleY>
+      <shearX>0.0</shearX>
+      <shearY>0.0</shearY>
+      <translateX>140.90289306640625</translateX>
+      <translateY>-33.939998626708984</translateY>
+    </transform>
+    <crs>EPSG:4326</crs>
+  </grid>
+  <supportedFormats>
+    <string>GEOTIFF</string>
+    <string>GIF</string>
+    <string>PNG</string>
+    <string>JPEG</string>
+    <string>TIFF</string>
+  </supportedFormats>
+  <interpolationMethods>
+    <string>nearest neighbor</string>
+    <string>bilinear</string>
+    <string>bicubic</string>
+  </interpolationMethods>
+  <defaultInterpolationMethod>nearest neighbor</defaultInterpolationMethod>
+  <dimensions>
+    <coverageDimension>
+      <name>Curing</name>
+      <description>GridSampleDimension(%)[0.0,100.0]</description>
+      <range>
+        <min>0.0</min>
+        <max>100.0</max>
+      </range>
+      <nullValues>
+        <double>-128.0</double>
+      </nullValues>
+      <unit>%</unit>
+      <dimensionType>
+        <name>REAL_32BITS</name>
+      </dimensionType>
+    </coverageDimension>
+  </dimensions>
+  <requestSRS>
+    <string>EPSG:4326</string>
+  </requestSRS>
+  <responseSRS>
+    <string>EPSG:4326</string>
+  </responseSRS>
+  <parameters>
+    <entry>
+      <string>Bands</string>
+      <null/>
+    </entry>
+    <entry>
+      <string>Filter</string>
+      <null/>
+    </entry>
+  </parameters>
+  <nativeCoverageName>Curing_SFC</nativeCoverageName>
+</coverage>
