@@ -1,0 +1,15 @@
+<layer>
+  <name>Curing_SFC</name>
+  <id>LayerInfoImpl--275f02ac:16222962da5:-7fe4</id>
+  <type>RASTER</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--275f02ac:16222962da5:-7fe6</id>
+  </defaultStyle>
+  <resource class="coverage">
+    <id>CoverageInfoImpl--275f02ac:16222962da5:-7fe5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

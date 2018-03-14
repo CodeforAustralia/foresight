@@ -21,6 +21,7 @@ Geoserver landing page
 1. Copy the data files to data directory.
 
 `gsdata/data/netcdf/CHaines_SFC.nc`
+`gsdata/data/netcdf/Curing_SFC.nc`
 `gsdata/data/netcdf/DF_SFC.nc`
 `gsdata/data/netcdf/FFDI_SFC.nc`
 `gsdata/data/netcdf/GFDI_SFC.nc`
