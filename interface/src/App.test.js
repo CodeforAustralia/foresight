@@ -9,7 +9,7 @@ const middlewares = []
 const mockStore = configureStore(middlewares)
 
 it('renders without crashing', () => {
-  const initialState = { todos: "" }
+  const initialState = { layers: {layers: []}, indicators: {indicators: []}, point: {lat: null, lng: null} }
   const store = mockStore(initialState)
   const div = document.createElement('div');
   ReactDOM.render(

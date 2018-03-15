@@ -1,6 +1,14 @@
 import indicators from '../config/indicators'
 
-const initialState = { indicators: indicators }
+let _sortAlphabeticallyByDisplayName = function(layers) {
+  return(layers.sort(function(a, b){
+      if(a.displayName < b.displayName) return -1;
+      if(a.displayName > b.displayName) return 1;
+      return 0;
+  }))
+}
+
+const initialState = { indicators: _sortAlphabeticallyByDisplayName(indicators) }
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {

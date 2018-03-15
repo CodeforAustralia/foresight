@@ -1,0 +1,29 @@
+.c-indicator-navigator {
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  padding: 1em;
+  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
+}
+
+.c-indicator-navigator__heading {
+  margin-top: 0;
+}
+
+.c-indicator-navigator__legend {
+  margin-right: 0.5em;
+}
+
+.c-indicator-navigator__input{
+  display: none;
+}
+.c-indicator-navigator__label::before {
+  content: "⚪️"
+}
+input[type="checkbox"]:checked+.c-indicator-navigator__label {
+  font-weight: bold;
+}
+input[type="checkbox"]:checked+.c-indicator-navigator__label::before {
+  content: "🔘"
+}

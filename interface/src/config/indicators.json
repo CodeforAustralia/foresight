@@ -1,10 +1,79 @@
 [
   {
     "displayName": "Surface temperature",
-    "shortName": "xyz",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:T_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Drought Factor",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:DF_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Forest Fire Danger Index",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:FFDI_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Grass Fire Danger Index",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:GFDI_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Keetch-Byram Drought Index",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:KBDI_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Relative Humidity",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:RH_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Wind Direction",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:Wind_Dir_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Wind Magnitude",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:Wind_Mag_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },

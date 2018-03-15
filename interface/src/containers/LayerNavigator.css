@@ -1,4 +1,4 @@
-.c-toggle-layers {
+.c-layer-navigator {
   position: absolute;
   right: 0;
   z-index: 999;
@@ -7,24 +7,24 @@
   box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
 }
 
-.c-toggle-layers__heading {
+.c-layer-navigator__heading {
   margin-top: 0;
 }
 
-.c-toggle-layers__legend {
+.c-layer-navigator__legend {
   height: 1em;
   margin-right: 0.5em;
 }
 
-.c-toggle-layers__input{
+.c-layer-navigator__input{
   display: none;
 }
-.c-toggle-layers__label::before {
+.c-layer-navigator__label::before {
   content: "⬜️"
 }
-input[type="checkbox"]:checked+.c-toggle-layers__label {
+input[type="checkbox"]:checked+.c-layer-navigator__label {
   font-weight: bold;
 }
-input[type="checkbox"]:checked+.c-toggle-layers__label::before {
+input[type="checkbox"]:checked+.c-layer-navigator__label::before {
   content: "✅"
 }
