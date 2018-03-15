@@ -1,0 +1,15 @@
+# Readiness Platform Importer
+
+This service imports data in a [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) format and processes it so that it can be used by the other services.
+
+## Running locally
+
+Requirements:
+
+- [Node](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/en/)
+- [Docker](https://www.docker.com/)
+
+1. Follow setup instructions [Setup](../setup/README.md)
+2. Install dependencies with `yarn install`.
+3. `yarn run start`

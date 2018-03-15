@@ -1,0 +1,39 @@
+{
+  "bomData": {
+    "src": "/Users/darion/foresight/bom/raw",
+    "temp": "/Users/darion/foresight/bom/temp",
+    "ext": "nc.gz"
+  },
+  "bomFiles": {
+    "chaines": {
+      "prefix": "CHaines_SFC"
+    },
+    "curing": {
+      "prefix": "Curing_SFC"
+    },
+    "df": {
+      "prefix": "DF_SFC"
+    },
+    "ffdi": {
+      "prefix": "FFDI_SFC"
+    },
+    "gfdi": {
+      "prefix": "GFDI_SFC"
+    },
+    "kbdi": {
+      "prefix": "KBDI_SFC"
+    },
+    "humidity": {
+      "prefix": "RH_SFC"
+    },
+    "temperature": {
+      "prefix": "T_SFC"
+    },
+    "wind_dir": {
+      "prefix": "Wind_Dir_SFC"
+    },
+    "wind_mag": {
+      "prefix": "Wind_Mag_SFC"
+    }
+  }
+}
