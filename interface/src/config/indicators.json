@@ -78,5 +78,25 @@
       "transparent": "TRUE"
     },
     "active": false
+  },
+  {
+    "displayName": "Continuous Haines",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:CHaines_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Curing",
+    "source": "http://localhost:8080/geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:Curing_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
   }
 ]
