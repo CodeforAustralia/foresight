@@ -45,7 +45,7 @@ module.exports.decompress = (src, dest) => {
 
 	return new Promise(((resolve, reject) => {
 
-		if (fileExists(src))
+		if (exports.fileExists(src))
 		{
 			// prepare streams
 			const input = fs.createReadStream(src);
@@ -67,7 +67,7 @@ module.exports.decompress = (src, dest) => {
 
 };
 
-const fileExists = (filePath) => {
+module.exports.fileExists = (filePath) => {
 	try {
 		return fs.statSync(filePath).isFile();
 	} catch (err) {

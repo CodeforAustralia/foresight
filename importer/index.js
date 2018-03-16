@@ -24,19 +24,36 @@ const findFiles = () => {
 		});
 };
 
-const decompressFiles = (filePaths) => {
+const decompressBomNetcdf = (filePaths) => {
 
 	console.log("Decompressor started ... ");
-	const { temp } = bomData;
+	const { netcdf } = bomData;
 	const promises = [];
 
 	_.forEach(bomFiles, (value, key) => {
 
 		const path = _.find(filePaths, (path) => _.includes(path, value.prefix));
 		if (path) {
-			const pathDest = `${temp}/${value.prefix}.nc`;
+			const pathDest = `${netcdf}/${value.prefix}.nc`;
 			promises.push(utils.decompress(path, pathDest));
 		}
+	});
+
+	return Promise.all(promises);
+};
+
+const extractBomMeta = () => {
+
+	console.log("Extractor started ... ");
+	const source = "Bom";
+	const { meta, netcdf } = bomData;
+	const promises = [];
+
+	_.forEach(bomFiles, (value, key) => {
+
+		const pathSrc = `${netcdf}/${value.prefix}.nc`;
+		const pathDest = `${meta}/${value.prefix}.json`;
+		promises.push(reader.extract(pathSrc, pathDest, value.prefix, source));
 	});
 
 	return Promise.all(promises);
@@ -45,7 +62,8 @@ const decompressFiles = (filePaths) => {
 // Run
 
 findFiles()
-	.then(decompressFiles)
+	.then(decompressBomNetcdf)
+	.then(extractBomMeta)
 	.then(() => {
-		console.log("Decompressor finished!");
+		console.log("Importer finished!");
 	});

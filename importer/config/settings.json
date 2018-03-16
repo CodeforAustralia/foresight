@@ -1,7 +1,8 @@
 {
   "bomData": {
     "src": "/Users/darion/foresight/bom/raw",
-    "temp": "/Users/darion/foresight/bom/temp",
+    "netcdf": "/Users/darion/foresight/bom/netcdf",
+    "meta": "/Users/darion/foresight/bom/meta",
     "ext": "nc.gz"
   },
   "bomFiles": {
