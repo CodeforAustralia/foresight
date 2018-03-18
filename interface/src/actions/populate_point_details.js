@@ -26,7 +26,7 @@ export const populatePointDetailsAsync = (point, layer) => {
   console.log("populating point details")
   console.log(layer)
   return dispatch => {
-    if(layer == undefined || point.lat == null){
+    if(layer === undefined || point.lat === null){
       // no-op
     } else {
       fetch(

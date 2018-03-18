@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Map, TileLayer, WMSTileLayer, Popup, ZoomControl } from 'react-leaflet'
+import { Map, TileLayer, WMSTileLayer, ZoomControl, ScaleControl } from 'react-leaflet'
 import mapConfig from '../config/map_settings'
 import { setActivePoint, populatePointDetailsAsync } from '../actions'
 import 'leaflet/dist/leaflet.css';
@@ -36,6 +36,7 @@ let MapLayers = ({ dispatch, layers, indicators, point }) => {
             <WMSTileLayer key={i} url={value.source} layers={value.params.layers} format={value.params.format} transparent={value.params.transparent} zIndex={3}/>
           ))
         }
+        <ScaleControl position="bottomleft"/>
         <ZoomControl position="bottomleft"/>
       </Map>
     </div>

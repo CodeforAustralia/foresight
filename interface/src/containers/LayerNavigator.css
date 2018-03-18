@@ -1,19 +1,25 @@
 .c-layer-navigator {
-  position: absolute;
-  right: 0;
-  z-index: 999;
-  background-color: #fff;
-  padding: 1em;
-  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
 }
 
 .c-layer-navigator__heading {
   margin-top: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.c-layer-navigator__option {
+  padding: 0.2em 2em 0.2em 0.2em;
+  position: relative;
+}
+.c-layer-navigator__option:hover, .c-layer-navigator__option:active {
+  background-color: #eee;
 }
 
 .c-layer-navigator__legend {
-  height: 1em;
-  margin-right: 0.5em;
+  height: 1.2em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
 }
 
 .c-layer-navigator__input{

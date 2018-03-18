@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Popup } from 'react-leaflet'
 import './PointDetails.css'
-let boundingBoxExtension = 1;
 
 let PointDetails = ({ dispatch, point, layer, popup_data }) => {
   var popUp;

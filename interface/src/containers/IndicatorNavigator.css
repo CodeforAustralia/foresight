@@ -1,14 +1,18 @@
 .c-indicator-navigator {
-  position: absolute;
-  left: 0;
-  z-index: 999;
-  background-color: #fff;
-  padding: 1em;
-  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
 }
 
 .c-indicator-navigator__heading {
   margin-top: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.c-indicator-navigator__option {
+  padding: 0.2em 2em 0.2em 0.2em;
+  position: relative;
+}
+.c-indicator-navigator__option:hover, .c-indicator-navigator__option:active {
+  background-color: #eee;
 }
 
 .c-indicator-navigator__legend {
