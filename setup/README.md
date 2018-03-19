@@ -4,19 +4,15 @@ This repository contains general setup scripts when the platform is installed.
 All the paths are relative to the project folder.
 
 
-## Database
+## Importer
 
-- Requires an pgdata directory
+- Copy & Paste the 'settings-sample.json' into './config' folder and rename it to 'settings.json'
 
-`./pgdata`
+`cp setup/importer/settings-sample.json importer/config/settings.json`
 
-- Mounted in the docker container as
+- Modify this settings.json specifying source and temp folders
 
-`./pgdata:/var/lib/postgresql/data`
-
-- add database.env in the database directory for credentials (check setup/database for sample)
-
-`database.env`
+`importer/config/settings.json`
 
 
 ## Geoserver
