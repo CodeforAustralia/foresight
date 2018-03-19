@@ -4,6 +4,7 @@ const reader = require('./lib/reader');
 const config = require('./config/settings.json');
 
 const { bomData, bomFiles } = config;
+const FilesModifiedAfterDate = new Date('2010-01-01');
 
 
 // Finds the files of interest from bom data location
@@ -12,9 +13,8 @@ const findFiles = () => {
 
 	console.log("Finder started ... ");
 	const { src } = bomData;
-	const dateModified = new Date('2010-01-01');
 
-	return utils.finder(src, dateModified)
+	return utils.finder(src, FilesModifiedAfterDate)
 		.then((filePaths) => {
 			console.log("Finder finished!");
 			return filePaths;
