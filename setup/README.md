@@ -8,7 +8,7 @@ All the paths are relative to the project folder.
 
 - Copy & Paste the 'settings-sample.json' into './config' folder and rename it to 'settings.json'
 
-`setup/importer/settings-sample.json`
+`cp setup/importer/settings-sample.json importer/config/settings.json`
 
 - Modify this settings.json specifying source and temp folders
 
