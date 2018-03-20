@@ -12,17 +12,14 @@
         <Rule>
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
-            <ColorMap>
-              <ColorMapEntry color="#23dae7" quantity="0" label="0" />
-              <ColorMapEntry color="#69f2b7" quantity="1" label="1" />
-              <ColorMapEntry color="#81f785" quantity="2" label="2" />
-              <ColorMapEntry color="#f5f35e" quantity="3" label="3" />
-              <ColorMapEntry color="#f0b158" quantity="4" label="4" />
-              <ColorMapEntry color="#dd6423" quantity="5" label="5" />
-              <ColorMapEntry color="#ca0020" quantity="6" label="6" />
-              <ColorMapEntry color="#cc0064" quantity="7" label="7" />
-              <ColorMapEntry color="#a51c9e" quantity="8" label="8" />
-              <ColorMapEntry color="#6c1ca5" quantity="9" label="9" />
+            <ColorMap type="intervals">
+              <ColorMapEntry color="#D4D4D4" quantity="-127" label=" No Data" opacity="0" />
+              <ColorMapEntry color="#00AEEF" quantity="5" label="  0  — 5" />
+              <ColorMapEntry color="#FFF000" quantity="8" label="  5  — 8" />
+              <ColorMapEntry color="#F89829" quantity="10" label="  8  — 10" />
+              <ColorMapEntry color="#EE2E24" quantity="12" label=" 10  — 12" />
+              <ColorMapEntry color="#963F39" quantity="20" label=" > 12" />
+              
             </ColorMap>
           </RasterSymbolizer>
         </Rule>

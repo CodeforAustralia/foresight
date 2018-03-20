@@ -12,17 +12,18 @@
         <Rule>
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
-            <ColorMap>
-              <ColorMapEntry color="#23dae7" quantity="0" label="0 - 5" />
-              <ColorMapEntry color="#69f2b7" quantity="5" label="5 - 10" />
-              <ColorMapEntry color="#81f785" quantity="10" label="10 - 15" />
-              <ColorMapEntry color="#f5f35e" quantity="15" label="15 - 20" />
-              <ColorMapEntry color="#f0b158" quantity="20" label="20 - 25" />
-              <ColorMapEntry color="#dd6423" quantity="25" label="25 - 30" />
-              <ColorMapEntry color="#ca0020" quantity="30" label="30 - 35" />
-              <ColorMapEntry color="#cc0064" quantity="35" label="35 - 40" />
-              <ColorMapEntry color="#a51c9e" quantity="40" label="40 - 45" />
-              <ColorMapEntry color="#6c1ca5" quantity="45" label="45" />
+             <ColorMap type="intervals">
+              <ColorMapEntry color="#347812" quantity="0" label=" 0 %" />
+              <ColorMapEntry color="#6AB928" quantity="10" label=" 1 — 10 %" />
+              <ColorMapEntry color="#93D432" quantity="20" label=" 11 — 20 %" />
+              <ColorMapEntry color="#B4E333" quantity="30" label="  21 — 30 %" />
+              <ColorMapEntry color="#D9F234" quantity="40" label=" 31 — 40 %" />
+              <ColorMapEntry color="#FFFF32" quantity="50" label=" 41 — 50 %" />
+              <ColorMapEntry color="#FFD634" quantity="60" label=" 51 — 60 %" />
+              <ColorMapEntry color="#FFAD33" quantity="70" label=" 61 — 70 %" />
+               <ColorMapEntry color="#FF8532" quantity="80" label=" 71 — 80 %" />
+              <ColorMapEntry color="#FF5B33" quantity="90" label=" 81 — 90 %" />
+              <ColorMapEntry color="#E00D0F" quantity="100" label=" 91 — 100 %" />
             </ColorMap>
           </RasterSymbolizer>
         </Rule>

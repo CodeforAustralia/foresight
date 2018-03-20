@@ -12,17 +12,16 @@
         <Rule>
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
-            <ColorMap>
-              <ColorMapEntry color="#23dae7" quantity="0" label="0 - 5" />
-              <ColorMapEntry color="#69f2b7" quantity="5" label="5 - 10" />
-              <ColorMapEntry color="#81f785" quantity="10" label="10 - 15" />
-              <ColorMapEntry color="#f5f35e" quantity="15" label="15 - 20" />
-              <ColorMapEntry color="#f0b158" quantity="20" label="20 - 25" />
-              <ColorMapEntry color="#dd6423" quantity="25" label="25 - 30" />
-              <ColorMapEntry color="#ca0020" quantity="30" label="30 - 35" />
-              <ColorMapEntry color="#cc0064" quantity="35" label="35 - 40" />
-              <ColorMapEntry color="#a51c9e" quantity="40" label="40 - 45" />
-              <ColorMapEntry color="#6c1ca5" quantity="45" label="45" />
+            <ColorMap type="intervals">
+              <ColorMapEntry color="#7AC142" quantity="11" label=" 0  — 11 Low-Moderate"/>
+              <ColorMapEntry color="#00AEEF" quantity="24" label=" 12  — 24 High"/>
+              <ColorMapEntry color="#FFF000" quantity="34" label=" 25  — 34 Very High &lt; 35"/>
+              <ColorMapEntry color="#FFF000" quantity="49" label=" 35  — 49 Very High &#x2265; 35"/>
+              <ColorMapEntry color="#F89829" quantity="99" label=" 50  — 99 Severe"/>
+              <ColorMapEntry color="#EE2E24" quantity="149" label=" 100  — 149 Extreme"/>
+              <ColorMapEntry color="#ca0020" quantity="600" label=" &#x2265; 150*"/>
+           
+
             </ColorMap>
           </RasterSymbolizer>
         </Rule>

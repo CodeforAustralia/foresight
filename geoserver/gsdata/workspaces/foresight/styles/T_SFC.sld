@@ -12,17 +12,28 @@
         <Rule>
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
-            <ColorMap>
-              <ColorMapEntry color="#23dae7" quantity="0" label="0 - 5" />
-              <ColorMapEntry color="#69f2b7" quantity="5" label="5 - 10" />
-              <ColorMapEntry color="#81f785" quantity="10" label="10 - 15" />
-              <ColorMapEntry color="#f5f35e" quantity="15" label="15 - 20" />
-              <ColorMapEntry color="#f0b158" quantity="20" label="20 - 25" />
-              <ColorMapEntry color="#dd6423" quantity="25" label="25 - 30" />
-              <ColorMapEntry color="#ca0020" quantity="30" label="30 - 35" />
-              <ColorMapEntry color="#cc0064" quantity="35" label="35 - 40" />
-              <ColorMapEntry color="#a51c9e" quantity="40" label="40 - 45" />
-              <ColorMapEntry color="#6c1ca5" quantity="45" label="45" />
+            <ColorMap type="intervals">
+              
+              <ColorMapEntry color="#D6F4F7" quantity="-3" label=" &lt; — -3 °C" />
+              <ColorMapEntry color="#AEEAF0" quantity="0" label=" -3 — 0 °C" />
+              <ColorMapEntry color="#85E9E8" quantity="3" label=" 0 — 3 °C" />
+              <ColorMapEntry color="#5CD4E0" quantity="6" label=" 3 — 6 °C" />
+              <ColorMapEntry color="#8ABBBF" quantity="9" label=" 6 — 9 °C" />
+              <ColorMapEntry color="#68AEAF" quantity="12" label=" 9 — 12 °C" />
+              <ColorMapEntry color="#4C9BA3" quantity="15" label=" 12 — 15 °C" />
+              <ColorMapEntry color="#6B9E56" quantity="18" label=" 15 — 18 °C" />
+              <ColorMapEntry color="#85AF70" quantity="21" label=" 18 — 21 °C" />
+              <ColorMapEntry color="#B8D1A4" quantity="24" label=" 21 — 24 °C" />
+              <ColorMapEntry color="#D1E2BE" quantity="27" label=" 24 — 27 °C" />
+              <ColorMapEntry color="#DCEDC8" quantity="30" label=" 27 — 30 °C" />
+              <ColorMapEntry color="#F9F18A" quantity="33" label=" 30 — 33 °C" />
+              <ColorMapEntry color="#FED954" quantity="36" label=" 33 — 36 °C" />
+              <ColorMapEntry color="#FDBB21" quantity="39" label=" 36 — 39 °C" />
+              <ColorMapEntry color="#F47F20" quantity="42" label=" 39 — 42 °C" />
+              <ColorMapEntry color="#FF5527" quantity="45" label=" 42 — 45 °C" />
+              <ColorMapEntry color="#C92026" quantity="50" label=" > — 45 °C" />
+              
+
             </ColorMap>
           </RasterSymbolizer>
         </Rule>
