@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  geoserver:
+    image: foresight/geoserver:2.12.1
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2048M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./gsdata:/opt/geoserver/data_dir
+    networks:
+      - geoservernet
+
+networks:
+  geoservernet:

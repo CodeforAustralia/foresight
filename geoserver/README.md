@@ -2,12 +2,12 @@
 
 ## Development, Testing and Deployment
 
-Geoserver included in the docker compose yaml
+Geoserver included in the docker deploy yaml
 
 
 ### Developing GS
 
-A "gsdata" folder/volume from the user directory needs to be mounted in the container.
+1. A "gsdata" folder/volume from the user directory needs to be mounted in the container.
 
 `./gsdata:/opt/geoserver/data_dir`
 
@@ -31,10 +31,4 @@ Geoserver landing page
 `gsdata/data/netcdf/Wind_Dir_SFC.nc`
 `gsdata/data/netcdf/Wind_Mag_SFC.nc`
 
-2. Deploy geoserver stack on the platform.
-
-`docker stack deploy -c docker-compose.yml foresight-gs`
-
-3. To stop the platform.
-
-`docker stack rm foresight-gs`
+2. Deploy geoserver using instructions [Main](../README.md)

@@ -67,6 +67,24 @@ module.exports.decompress = (src, dest) => {
 
 };
 
+module.exports.writeJsonFile = (dest, data) => {
+
+	return new Promise(((resolve, reject) => {
+
+		const json = JSON.stringify(data);
+
+		fs.writeFile(dest, json, 'utf8',  (err) => {
+			if (err)
+				reject();
+			else
+				resolve();
+		});
+
+		console.log(dest);
+	}));
+
+};
+
 module.exports.fileExists = (filePath) => {
 	try {
 		return fs.statSync(filePath).isFile();

@@ -1,9 +1,9 @@
 {
-  "name": "foresight-importer",
+  "name": "foresight-api",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Code For Australia",
-  "description": "Foresight Importer",
+  "description": "Foresight API",
   "repository": {
     "type": "git",
     "url": "https://"
@@ -13,10 +13,11 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
-    "moment": "^2.21.0",
-    "netcdfjs": "^0.3.1",
-    "node-find-files": "^0.0.4"
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0"
   },
   "devDependencies": {}
 }

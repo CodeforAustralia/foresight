@@ -59,11 +59,19 @@ const extractBomMeta = () => {
 	return Promise.all(promises);
 };
 
+const createIndex = (metaObjs) => {
+
+	const { meta } = bomData;
+	const dest = `${meta}/index.json`;
+	return utils.writeJsonFile(dest, metaObjs);
+};
+
 // Run
 
 findFiles()
 	.then(decompressBomNetcdf)
 	.then(extractBomMeta)
+	.then(createIndex)
 	.then(() => {
 		console.log("Importer finished!");
 	});

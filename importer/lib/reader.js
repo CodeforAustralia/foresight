@@ -3,7 +3,10 @@
 const fs = require('fs');
 const netcdf = require('netcdfjs');
 const _	= require('lodash');
+const moment = require('moment');
 const utils = require('./utils');
+
+const API_DEST = 'meta';
 
 
 module.exports.extract = (src, dest, prefix, source) => {
@@ -19,7 +22,7 @@ module.exports.extract = (src, dest, prefix, source) => {
 			meta.prefix = prefix;
 			meta.source = source;
 			meta.creationTime = getCreationTime(nr.globalAttributes);
-			meta.timeArray = nr.getDataVariable('time');
+			meta.timeArray = getTimeVariable(nr.getDataVariable('time'));
 
 			const json = JSON.stringify(meta);
 
@@ -27,7 +30,7 @@ module.exports.extract = (src, dest, prefix, source) => {
 				if (err)
 					reject();
 				else
-					resolve();
+					resolve(createMetaObj(prefix));
 			});
 
 			console.log(dest);
@@ -45,6 +48,13 @@ const netCDFReader = (file) => {
 	return new netcdf(data);
 };
 
+const createMetaObj = (prefix) => {
+	return {
+		prefix: prefix,
+		url: `${API_DEST}/${prefix}.json`
+	};
+};
+
 const getMetaTemplate = () => {
 	return {
 		prefix: "",
@@ -56,5 +66,11 @@ const getMetaTemplate = () => {
 
 const getCreationTime = (attributes) => {
 	const att = _.find(attributes, { name: 'creationTime' });
-	return att.value;
+	return moment(att.value, 'X').toISOString();
+};
+
+const getTimeVariable = (arr) => {
+	return _.map(arr, (value) => {
+		return moment(value, 'X').toISOString();
+	});
 };

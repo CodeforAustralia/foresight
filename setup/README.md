@@ -1,4 +1,4 @@
-# Readiness Platform Setup
+# Foresight Setup
 
 This repository contains general setup scripts when the platform is installed.
 All the paths are relative to the project folder.
@@ -13,6 +13,23 @@ All the paths are relative to the project folder.
 - Modify this settings.json specifying source and temp folders
 
 `importer/config/settings.json`
+
+
+## API
+
+- Requires an api docker image
+
+`cd setup/api`
+
+`./build.sh`
+
+- Requires a public_html directory
+
+`api/public_html`
+
+- Mounted in the docker container as
+
+`api/public_html:/src/public_html`
 
 
 ## Geoserver

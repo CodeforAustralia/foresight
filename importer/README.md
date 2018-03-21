@@ -1,14 +1,13 @@
-# Readiness Platform Importer
+# Foresight Importer
 
 This service imports data in a [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) format and processes it so that it can be used by the other services.
 
-## Running locally
+## Running
 
 Requirements:
 
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/en/)
-- [Docker](https://www.docker.com/)
 
 1. Follow setup instructions [Setup](../setup/README.md)
 2. Install dependencies with `yarn install`.
@@ -18,3 +17,6 @@ Requirements:
 
 `readiness-platform/geoserver/gsdata/data/netcdf`
 
+6. Replace the meta folder in api with the one from importer
+
+`readiness-platform/api/public_html/meta`

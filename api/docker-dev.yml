@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+
+  api:
+    image: foresight/api:latest
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "1"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8180:8180"
+    entrypoint:
+      - yarn
+      - run
+      - start
+    networks:
+      - apinet
+
+networks:
+  apinet:

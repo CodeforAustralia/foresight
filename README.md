@@ -9,7 +9,7 @@ The repository contains several different services which should be able to opera
 - **Interface** - displays the map
 
 
-## Running locally
+## Setup
 
 Each service within this repository has its own `README.md` with instructions on running it locally.
 
@@ -20,25 +20,35 @@ General requirements:
 - [Yarn](https://yarnpkg.com/en/)
 - [Docker](https://www.docker.com/)
 
-Deploying locally:
+1. Change to the platform's root folder.
+2. Follow setup instructions [Setup](setup/README.md)
 
-- Change to the platform's root folder.
-- Follow setup instructions [Setup](setup/README.md)
-- Initialise docker swarm.
+
+## Deploying:
+
+1. Initialise docker swarm.
 
 `docker swarm init`
 
-- Use service read me files for instructions on individual services.
+- Use service README files for instructions on individual services.
 
+2. Deploy platform stack in root project folder.
 
-Shutting Deployment:
+`docker stack deploy -c docker-deploy.yml foresight`
+
+3. To stop the platform.
+
+`docker stack rm foresight`
+
+4. Shutting Deployment:
 
 `docker swarm leave --force`
 
 
-## Deployment
+## Environments
 
 There are currently no deployment environments for this repository. It is intended that it will be deployed to the Horizon environment.
+
 
 ## Contributing
 
