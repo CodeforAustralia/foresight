@@ -24,6 +24,20 @@ const reducer = (state = initialState, action) => {
       return {
         indicators: newIndicators
       }
+    case 'UPDATE_INDICATOR_TIMES':
+      console.log("in reducer")
+      let updatedIndicators = state.indicators.map((value, index) => {
+        let updatedValue = {...value};
+        console.log(updatedValue)
+        if(index === action.index) {
+          updatedValue.available_times = action.times
+        }
+        return updatedValue
+      })
+      console.log(updatedIndicators)
+      return {
+        indicators: updatedIndicators
+      }
     default:
       return state
   }

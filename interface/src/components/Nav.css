@@ -21,4 +21,9 @@
   background-position: left;
   background-size: contain;
   margin-left: 1em;
+  display:inline-block;
+}
+
+.c-nav__element {
+  display: inline-block;
 }

@@ -1,102 +1,122 @@
 [
   {
     "displayName": "Surface temperature",
+    "metaLink": "http://localhost:8180/meta/T_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:T_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Drought Factor",
+    "metaLink": "http://localhost:8180/meta/DF_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:DF_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Forest Fire Danger Index",
+    "metaLink": "http://localhost:8180/meta/FFDI_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:FFDI_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Grass Fire Danger Index",
+    "metaLink": "http://localhost:8180/meta/GFDI_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:GFDI_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Keetch-Byram Drought Index",
+    "metaLink": "http://localhost:8180/meta/KBDI_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:KBDI_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Relative Humidity",
+    "metaLink": "http://localhost:8180/meta/RH_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:RH_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Wind Direction",
+    "metaLink": "http://localhost:8180/meta/Wind_Dir_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Wind_Dir_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Wind Magnitude",
+    "metaLink": "http://localhost:8180/meta/Wind_Mag_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Wind_Mag_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Continuous Haines",
+    "metaLink": "http://localhost:8180/meta/CHaines_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:CHaines_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   },
   {
     "displayName": "Curing",
+    "metaLink": "http://localhost:8180/meta/Curing_SFC.json",
     "source": "http://localhost:8080/geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Curing_SFC",
       "format": "image/png",
       "transparent": "TRUE"
     },
+    "available_times": [],
     "active": false
   }
 ]

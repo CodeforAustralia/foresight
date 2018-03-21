@@ -33,6 +33,18 @@ html, body {
   float: right;
 }
 
+.c-bottom-navigator {
+  position: absolute;
+  bottom: 3em;
+  left: 3em;
+  right: 3em;
+  width: calc(100% - 6em);
+  z-index: 600;
+  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
+  background-color: #FFF;
+  padding: 0.5em;
+}
+
 .h-no-top-margin {
   margin-top: 0;
 }

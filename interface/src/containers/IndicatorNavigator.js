@@ -1,11 +1,11 @@
 import React from 'react'
 import Collapsible from 'react-collapsible';
 import { connect } from 'react-redux'
-import { switchIndicators, populatePointDetailsAsync } from '../actions'
+import { switchIndicators, populatePointDetailsAsync, updateIndicatorTimesAsync } from '../actions'
 import './IndicatorNavigator.css'
 import '../components/Collapsible.css';
 
-let IndicatorNavigator = ({ dispatch, indicators, point }) => {
+let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
   let active_indicators = indicators.filter(layer => layer.active === true);
   return (
     <div className="c-indicator-navigator">
@@ -19,7 +19,8 @@ let IndicatorNavigator = ({ dispatch, indicators, point }) => {
                   htmlFor={"layer-toggle-" + i}
                   onClick={ function(e){
                     dispatch(switchIndicators(i))
-                    dispatch(populatePointDetailsAsync(point, indicators[i]))
+                    dispatch(populatePointDetailsAsync(point, indicators[i], time.selected_time))
+                    dispatch(updateIndicatorTimesAsync(i, indicators))
                   } }
                 >
                   {value.displayName}
@@ -35,7 +36,8 @@ let IndicatorNavigator = ({ dispatch, indicators, point }) => {
 const mapStateToProps = state => {
   return {
     indicators: state.indicators.indicators,
-    point: state.point
+    point: state.point,
+    time: state.time
   }
 }
 

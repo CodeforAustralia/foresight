@@ -1,0 +1,8 @@
+.c-temporal-navigator__time {
+  font-size: 0.75em;
+}
+
+.c-temporal-navigator__time--is-on {
+  font-weight: bold;
+  color: red;
+}
