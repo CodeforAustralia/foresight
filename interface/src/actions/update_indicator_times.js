@@ -1,21 +1,21 @@
+import { indicatorMetaBase } from '../config/environment.js'
+
 export const updateIndicatorTimesAsync = (index, indicators) => {
   let indicator = indicators[index]
-  console.log("updating indicator times")
   return dispatch => {
-    if(indicator === undefined || indicator.metaLink === null){
+    if(indicator.metaLink === undefined || indicator.metaLink === null){
       // no-op
     } else {
       fetch(
-        indicator.metaLink
+        (indicatorMetaBase + indicator.metaLink)
       ).then(
         response => {
           return response.json();
         }
       ).then(
         data => {
-          console.log(data.timeArray)
           dispatch(
-            updateIndicatorTimes(index, data.timeArray)
+            updateIndicatorTimes(index, data.timeArray, data.creationTime, data.source)
           )
         }
       )
@@ -23,10 +23,12 @@ export const updateIndicatorTimesAsync = (index, indicators) => {
   }
 }
 
-export const updateIndicatorTimes = (index, times) => {
+export const updateIndicatorTimes = (index, times, creationTime, dataSource) => {
   return {
     type: 'UPDATE_INDICATOR_TIMES',
     index: index,
-    times: times
+    times: times,
+    creationTime: creationTime,
+    dataSource: dataSource
   }
 }

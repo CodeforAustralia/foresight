@@ -1,1 +1,15 @@
-{"type":"FeatureCollection","totalFeatures":"unknown","features":[{"type":"Feature","id":"","geometry":null,"properties":{"Surface_Temperature":6.800000190734863}}],"crs":null}
+{
+  "type":"FeatureCollection",
+  "totalFeatures":"unknown",
+  "features":[
+  {
+    "type":"Feature",
+    "id":"",
+    "geometry":null,
+    "properties":{
+      "Surface_Temperature":6.800000190734863
+      }
+    }
+  ],
+  "crs":null
+}

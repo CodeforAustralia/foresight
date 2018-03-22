@@ -14,7 +14,11 @@ Requirements:
 
 
 1. Install dependencies with `yarn install`.
-2. Run the server with `yarn run start`. It will be available at [localhost:3000](localhost:3000).
+2. Copy the example environment file. 
+```sh
+cp .env.example .env
+```
+3. Run the server with `yarn run start`. It will be available at [localhost:3000](localhost:3000).
 
 ## Styleguide
 

@@ -1,5 +1,6 @@
 import { populatePointDetailsAsync, populatePointDetails } from './populate_point_details.js'
 import { updateIndicatorTimesAsync, updateIndicatorTimes } from './update_indicator_times.js'
+import { populateIndicatorDetails, populateIndicatorDetailsAsync } from './populate_indicator_details.js'
 
 export const toggleLayer = (index) => {
   return {
@@ -29,4 +30,4 @@ export const setActiveTime = (selected_time) => {
   }
 }
 
-export { populatePointDetailsAsync, populatePointDetails, updateIndicatorTimesAsync, updateIndicatorTimes }
+export { populatePointDetailsAsync, populatePointDetails, updateIndicatorTimesAsync, updateIndicatorTimes, populateIndicatorDetails, populateIndicatorDetailsAsync }
