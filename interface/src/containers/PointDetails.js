@@ -8,14 +8,14 @@ let PointDetails = ({ dispatch, point, layer, popup_data }) => {
   if(point.lat !== null){
     popUp = <Popup position={ point }>
       <div className="c-point-details">
-        <p>{
+        {
           Object.keys(popup_data).map((value, i) => (
             <div key={i}>
               <span className="c-point-details__indicator">{value}: </span>
               <span className="c-point-details__value">{parseFloat(popup_data[value]).toFixed(1)}</span>
             </div>
           ))
-        }</p>
+        }
         <p className="c-point-details__latlng">{point.lat.toFixed(3)},{point.lng.toFixed(3)}</p>
       </div>
     </Popup>

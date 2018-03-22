@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './IndicatorLegend.css'
 import Collapsible from 'react-collapsible';
+import { geoserverBase } from '../config/environment.js'
 
 
 let IndicatorLegend = ({ dispatch, indicators, layers }) => {
@@ -25,7 +26,7 @@ let IndicatorLegend = ({ dispatch, indicators, layers }) => {
         active_indicators.map((value, i) => (
           <div key={i}>
           <p>{ value.displayName }</p>
-          <img src={ value.source + "REQUEST=GetLegendGraphic&format=image/png&layer=" + value.params.layers } className="c-indicator-navigator__legend" id={ "indicator-navigator-legend-" + i } alt="" />
+          <img src={ geoserverBase + value.source + "REQUEST=GetLegendGraphic&format=image/png&layer=" + value.params.layers } className="c-indicator-navigator__legend" id={ "indicator-navigator-legend-" + i } alt="" />
           </div>
         ))
       }

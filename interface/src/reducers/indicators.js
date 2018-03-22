@@ -11,32 +11,45 @@ let _sortAlphabeticallyByDisplayName = function(layers) {
 const initialState = { indicators: _sortAlphabeticallyByDisplayName(indicators) }
 
 const reducer = (state = initialState, action) => {
+  let newIndicators, newIndicator
   switch(action.type) {
+    case 'POPULATE_INDICATOR_DETAILS':
+      newIndicators = state.indicators.map((value, index) => {
+        newIndicator = {...value}
+        let matching_action_indicators = action.indicators.filter(indicator => indicator.prefix === value.prefix);
+        matching_action_indicators.forEach(function(action_indicator){
+          newIndicator.available = true;
+          newIndicator.metaLink = action_indicator.url;
+        })
+        return newIndicator;
+      })
+      return {
+        indicators: newIndicators
+      }
     case 'SWITCH_ACTIVE_INDICATOR':
-      let newIndicators = state.indicators.map((value, index) => {
-        let new_value = {...value};
-        new_value.active = false
+      newIndicators = state.indicators.map((value, index) => {
+        newIndicator = {...value};
+        newIndicator.active = false
         if(index === action.index) {
-          new_value.active = !value.active
+          newIndicator.active = !value.active
         }
-        return new_value
+        return newIndicator
       })
       return {
         indicators: newIndicators
       }
     case 'UPDATE_INDICATOR_TIMES':
-      console.log("in reducer")
-      let updatedIndicators = state.indicators.map((value, index) => {
-        let updatedValue = {...value};
-        console.log(updatedValue)
+      newIndicators = state.indicators.map((value, index) => {
+        newIndicator = {...value};
         if(index === action.index) {
-          updatedValue.available_times = action.times
+          newIndicator.available_times = action.times
+          newIndicator.creationTime = action.creationTime
+          newIndicator.dataSource = action.dataSource
         }
-        return updatedValue
+        return newIndicator
       })
-      console.log(updatedIndicators)
       return {
-        indicators: updatedIndicators
+        indicators: newIndicators
       }
     default:
       return state

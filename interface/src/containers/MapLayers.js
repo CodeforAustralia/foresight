@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Map, TileLayer, WMSTileLayer, ZoomControl, ScaleControl } from 'react-leaflet'
 import mapConfig from '../config/map_settings'
 import { setActivePoint, populatePointDetailsAsync } from '../actions'
+import { geoserverBase } from '../config/environment.js'
 import 'leaflet/dist/leaflet.css';
 import './MapLayers.css';
 import PointDetails from './PointDetails.js'
@@ -35,7 +36,7 @@ let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
           active_indicators.map((value, i) => (
             <WMSTileLayer
               key={i}
-              url={value.source}
+              url={ (geoserverBase + value.source) }
               layers={value.params.layers}
               format={value.params.format}
               transparent={value.params.transparent}

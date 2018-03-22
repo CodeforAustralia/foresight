@@ -1,3 +1,5 @@
+import { geoserverBase } from '../config/environment.js'
+
 // Populates indicator data for a given point.
 
 let _parsePointDetailsData = function(data){
@@ -15,7 +17,9 @@ let _constructRequestString = function(source, lat, lng, query_layers, time, bou
   let parsed_time = new Date(time)
   let formatted_time = parsed_time.toISOString()
   return(
-    source + baseRequestParameters
+    geoserverBase
+    + source
+    + baseRequestParameters
     + "&SRS=" + projectionFormat
     + "&QUERY_LAYERS=" + query_layers
     + "&LAYERS=" + query_layers
