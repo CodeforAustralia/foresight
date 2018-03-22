@@ -1,0 +1,6 @@
+
+bom/meta/*
+!bom/meta/.gitkeep
+
+bom/netcdf/*
+!bom/netcdf/.gitkeep

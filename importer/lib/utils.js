@@ -9,34 +9,41 @@ module.exports.finder = (dir, fromDate) => {
 
 	return new Promise(((resolve, reject) => {
 
-		const filePaths = [];
+		try {
+			const filePaths = [];
 
-		const find = new nff({
-			rootFolder: dir,
-			filterFunction: (path, stat) => {
-				return (stat.mtime > fromDate) ? true : false;
-			}
-		});
+			const find = new nff({
+				rootFolder: dir,
+				filterFunction: (path, stat) => {
+					return (stat.mtime > fromDate) ? true : false;
+				}
+			});
 
-		find.on("match", (strPath, stat) => {
-			console.log(strPath + " - " + stat.mtime);
-			filePaths.push(strPath);
-		});
+			find.on("match", (strPath, stat) => {
+				console.log(strPath + " - " + stat.mtime);
+				filePaths.push(strPath);
+			});
 
-		find.on("patherror", (err, strPath) => {
-			console.log("Error for Path " + strPath + " " + err);
-		});
+			find.on("patherror", (err, strPath) => {
+				console.log("Error for Path " + strPath + " " + err);
+			});
 
-		find.on("error", (err) => {
-			console.log("Global Error " + err);
-			reject();
-		});
+			find.on("error", (err) => {
+				console.log("Global Error " + err);
+				reject(err);
+			});
 
-		find.on("complete", () => {
-			resolve(filePaths);
-		});
+			find.on("complete", () => {
+				resolve(filePaths);
+			});
 
-		find.startSearch();
+			find.startSearch();
+
+		}
+		catch (error) {
+			reject(error);
+		}
+
 	}));
 
 };
@@ -45,23 +52,27 @@ module.exports.decompress = (src, dest) => {
 
 	return new Promise(((resolve, reject) => {
 
-		if (exports.fileExists(src))
-		{
-			// prepare streams
-			const input = fs.createReadStream(src);
-			const output = fs.createWriteStream(dest);
+		try {
+			if (exports.fileExists(src)) {
+				// prepare streams
+				const input = fs.createReadStream(src);
+				const output = fs.createWriteStream(dest);
 
-			// extract the archive
-			input.pipe(zlib.createGunzip()).pipe(output);
+				// extract the archive
+				input.pipe(zlib.createGunzip()).pipe(output);
 
-			// callback on extract completion
-			output.on('close', () => {
-				console.log("Unzipped " + src);
-				resolve({ src, dest });
-			});
+				// callback on extract completion
+				output.on('close', () => {
+					console.log("Unzipping to " + dest);
+					resolve({src, dest});
+				});
+			}
+			else {
+				reject(`File does not exist: ${dest}`);
+			}
 		}
-		else {
-			reject();
+		catch (error) {
+			reject(error);
 		}
 	}));
 
@@ -71,16 +82,21 @@ module.exports.writeJsonFile = (dest, data) => {
 
 	return new Promise(((resolve, reject) => {
 
-		const json = JSON.stringify(data);
+		try {
+			const json = JSON.stringify(data);
 
-		fs.writeFile(dest, json, 'utf8',  (err) => {
-			if (err)
-				reject();
-			else
-				resolve();
-		});
+			fs.writeFile(dest, json, 'utf8', (err) => {
+				if (err)
+					reject(err);
+				else
+					resolve();
+			});
 
-		console.log(dest);
+			console.log(dest);
+		}
+		catch (error) {
+			reject(error);
+		}
 	}));
 
 };
