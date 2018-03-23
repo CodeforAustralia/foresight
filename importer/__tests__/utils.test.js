@@ -1,4 +1,5 @@
 const utils = require('../lib/utils');
+const reader = require('../lib/reader');
 
 const config = {
 	bomData: {
@@ -82,7 +83,7 @@ describe('Utils Decompress', () => {
 
 describe('Utils writeJsonFile', () => {
 
-	test('unzips files in a folder', () => {
+	test('writes json files into a folder', () => {
 
 		const { meta } = bomData;
 		const dest = `${meta}/index.json`;
@@ -108,6 +109,47 @@ describe('Utils writeJsonFile', () => {
 		return utils.writeJsonFile(dest, obj)
 			.then(() => {
 				expect(utils.fileExists(dest)).toEqual(false);
+			})
+			.catch((err) => {
+				expect(err).toBeDefined();
+			});
+	});
+
+});
+
+describe('Reader Extract', () => {
+
+	test('extracts file metadata into a folder', () => {
+
+		const { meta, netcdf } = bomData;
+
+		const pathSrc = `${netcdf}/Curing_SFC.nc`;
+		const pathDest = `${meta}/Curing_SFC.json`;
+
+		const result = {
+			prefix: 'Curing_SFC',
+			url: 'meta/Curing_SFC.json'
+		};
+
+		return reader.extract(pathSrc, pathDest, 'Curing_SFC', 'Bom')
+			.then((metaObj) => {
+				expect(metaObj).toEqual(result);
+			})
+			.catch((err) => {
+				expect(err).toBeUndefined();
+			});
+	});
+
+	test('throws error if src netcdf file does not exist', () => {
+
+		const { meta, netcdf } = bomData;
+
+		const pathSrc = `${netcdf}/NONEXISTENT_SFC.nc`;
+		const pathDest = `${meta}/Curing_SFC.json`;
+
+		return reader.extract(pathSrc, pathDest, 'Curing_SFC', 'Bom')
+			.then((metaObj) => {
+				expect(metaObj).toBeUndefined();
 			})
 			.catch((err) => {
 				expect(err).toBeDefined();

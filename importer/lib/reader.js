@@ -28,7 +28,7 @@ module.exports.extract = (src, dest, prefix, source) => {
 
 				fs.writeFile(dest, json, 'utf8', (err) => {
 					if (err)
-						reject();
+						reject(err);
 					else
 						resolve(createMetaObj(prefix));
 				});
@@ -36,7 +36,7 @@ module.exports.extract = (src, dest, prefix, source) => {
 				console.log(dest);
 			}
 			else {
-				reject();
+				reject(`File does not exist: ${dest}`);
 			}
 		}
 		catch (error) {
