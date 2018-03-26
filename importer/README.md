@@ -20,3 +20,8 @@ Requirements:
 6. Replace the meta folder in api with the one from importer
 
 `readiness-platform/api/public_html/meta`
+
+
+## Testing
+
+`yarn run test`
