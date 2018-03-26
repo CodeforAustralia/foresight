@@ -74,4 +74,7 @@ findFiles()
 	.then(createIndex)
 	.then(() => {
 		console.log("Importer finished!");
+	})
+	.catch((err) => {
+		console.error(err);
 	});

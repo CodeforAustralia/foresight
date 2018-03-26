@@ -13,30 +13,34 @@ module.exports.extract = (src, dest, prefix, source) => {
 
 	return new Promise(((resolve, reject) => {
 
-		if (utils.fileExists(src))
-		{
-			// create reader
-			const nr = netCDFReader(src);
-			const meta = getMetaTemplate();
+		try {
+			if (utils.fileExists(src)) {
+				// create reader
+				const nr = netCDFReader(src);
+				const meta = getMetaTemplate();
 
-			meta.prefix = prefix;
-			meta.source = source;
-			meta.creationTime = getCreationTime(nr.globalAttributes);
-			meta.timeArray = getTimeVariable(nr.getDataVariable('time'));
+				meta.prefix = prefix;
+				meta.source = source;
+				meta.creationTime = getCreationTime(nr.globalAttributes);
+				meta.timeArray = getTimeVariable(nr.getDataVariable('time'));
 
-			const json = JSON.stringify(meta);
+				const json = JSON.stringify(meta);
 
-			fs.writeFile(dest, json, 'utf8',  (err) => {
-				if (err)
-					reject();
-				else
-					resolve(createMetaObj(prefix));
-			});
+				fs.writeFile(dest, json, 'utf8', (err) => {
+					if (err)
+						reject(err);
+					else
+						resolve(createMetaObj(prefix));
+				});
 
-			console.log(dest);
+				console.log(dest);
+			}
+			else {
+				reject(`File does not exist: ${dest}`);
+			}
 		}
-		else {
-			reject();
+		catch (error) {
+			reject(error);
 		}
 	}));
 
