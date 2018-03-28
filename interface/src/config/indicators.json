@@ -138,7 +138,7 @@
     "displayName": "Curing",
     "prefix": "Curing_SFC",
     "units": "%",
-    "rounding_rule": "1",
+    "rounding_rule": "0",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Curing_SFC",
