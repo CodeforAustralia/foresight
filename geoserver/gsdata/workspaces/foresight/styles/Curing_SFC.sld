@@ -23,7 +23,7 @@
               <ColorMapEntry color="#FFAD33" quantity="70" label=" 61 — &lt;70" />
                <ColorMapEntry color="#FF8532" quantity="80" label=" 71 — &lt;80" />
               <ColorMapEntry color="#FF5B33" quantity="90" label=" 81 — &lt;90" />
-              <ColorMapEntry color="#E00D0F" quantity="100" label=" 91 — &lt;100" />
+              <ColorMapEntry color="#E00D0F" quantity="101" label=" 91 — &lt;100" />
             </ColorMap>
           </RasterSymbolizer>
         </Rule>
