@@ -50,7 +50,7 @@ let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
             <WMSTileLayer key={i} url={value.source} layers={value.params.layers} format={value.params.format} transparent={value.params.transparent} zIndex={3}/>
           ))
         }
-        <ScaleControl position="bottomleft"/>
+        <ScaleControl position="bottomleft" imperial={false}/>
         <ZoomControl position="bottomleft"/>
       </Map>
     </div>
