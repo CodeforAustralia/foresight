@@ -9,7 +9,7 @@ let LayerNavigator = ({ dispatch, layers }) => {
   let active_layers = layers.filter(layer => layer.active === true);
   return (
     <div className="c-layer-navigator">
-      <Collapsible trigger={<h3 className={"c-layer-navigator__heading c-layer-navigator__heading-" + active_layers.length}>Boundary layers</h3>}>
+      <Collapsible trigger={<h3 className={"c-layer-navigator__heading c-layer-navigator__heading-" + active_layers.length}>Boundary Layers</h3>}>
         {
           layers.map((value, i) => (
             <div className="c-layer-navigator__option" key={i}>

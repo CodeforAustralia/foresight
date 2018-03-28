@@ -1,6 +1,6 @@
 [
   {
-    "displayName": "Surface temperature",
+    "displayName": "Surface Temperature",
     "units": "°C",
     "rounding_rule": "1",
     "prefix": "T_SFC",
