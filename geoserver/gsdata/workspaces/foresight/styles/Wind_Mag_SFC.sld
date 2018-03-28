@@ -13,15 +13,15 @@
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
             <ColorMap type="intervals">
-              <ColorMapEntry color="#EFF8FD" quantity="0" label=" 0  — 5" />
-              <ColorMapEntry color="#CCF0FE" quantity="5" label=" 5  — 10" />
-              <ColorMapEntry color="#9CDBFC" quantity="10" label=" 10  — 15" />
-              <ColorMapEntry color="#D2F5AF" quantity="15" label=" 15  — 20" />
-              <ColorMapEntry color="#8FDA8A" quantity="20" label=" 20  — 25" />
-              <ColorMapEntry color="#E6E675" quantity="25" label=" 25  — 30" />
-              <ColorMapEntry color="#FF7D4B" quantity="30" label=" 30  — 35" />
-              <ColorMapEntry color="#E5270C" quantity="35" label=" 35  — 45" />
-              <ColorMapEntry color="#990200" quantity="45" label=" &gt; 45" />
+              <ColorMapEntry color="#EFF8FD" quantity="0" label=" 0  — &lt;5" />
+              <ColorMapEntry color="#CCF0FE" quantity="5" label=" 5  — &lt;10" />
+              <ColorMapEntry color="#9CDBFC" quantity="10" label=" 10  — &lt;15" />
+              <ColorMapEntry color="#D2F5AF" quantity="15" label=" 15  — &lt;20" />
+              <ColorMapEntry color="#8FDA8A" quantity="20" label=" 20  — &lt;25" />
+              <ColorMapEntry color="#E6E675" quantity="25" label=" 25  — &lt;30" />
+              <ColorMapEntry color="#FF7D4B" quantity="30" label=" 30  — &lt;35" />
+              <ColorMapEntry color="#E5270C" quantity="35" label=" 35  — &lt;45" />
+              <ColorMapEntry color="#990200" quantity="45" label=" &#x2265;45" />
               
             </ColorMap>
           </RasterSymbolizer>

@@ -15,11 +15,11 @@
             <ColorMap type="intervals">
               <ColorMapEntry color="#7AC142" quantity="11" label=" 0  — 11 Low-Moderate"/>
               <ColorMapEntry color="#00AEEF" quantity="24" label=" 12  — 24 High"/>
-              <ColorMapEntry color="#FFF000" quantity="34" label=" 25  — 34 Very High &lt; 35"/>
-              <ColorMapEntry color="#FFF000" quantity="49" label=" 35  — 49 Very High &#x2265; 35"/>
+              <ColorMapEntry color="#FAFD9F" quantity="34" label=" 25  — 34 Very High A"/>
+              <ColorMapEntry color="#FFF000" quantity="49" label=" 35  — 49 Very High B"/>
               <ColorMapEntry color="#F89829" quantity="99" label=" 50  — 99 Severe"/>
               <ColorMapEntry color="#EE2E24" quantity="149" label=" 100  — 149 Extreme"/>
-              <ColorMapEntry color="#ca0020" quantity="600" label=" &#x2265; 150*"/>
+              <ColorMapEntry color="#850C06" quantity="600" label=" &#x2265; 150*"/>
            
 
             </ColorMap>

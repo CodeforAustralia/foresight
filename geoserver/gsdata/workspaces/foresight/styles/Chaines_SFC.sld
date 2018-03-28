@@ -14,11 +14,11 @@
             <Opacity>1.0</Opacity>
             <ColorMap type="intervals">
               <ColorMapEntry color="#D4D4D4" quantity="-127" label=" No Data" opacity="0" />
-              <ColorMapEntry color="#00AEEF" quantity="5" label="  0  — 5" />
-              <ColorMapEntry color="#FFF000" quantity="8" label="  5  — 8" />
-              <ColorMapEntry color="#F89829" quantity="10" label="  8  — 10" />
-              <ColorMapEntry color="#EE2E24" quantity="12" label=" 10  — 12" />
-              <ColorMapEntry color="#963F39" quantity="20" label=" > 12" />
+              <ColorMapEntry color="#00AEEF" quantity="5" label="  0  — &lt;5" />
+              <ColorMapEntry color="#FFF000" quantity="8" label="  5  — &lt;8" />
+              <ColorMapEntry color="#F89829" quantity="10" label="  8  — &lt;10" />
+              <ColorMapEntry color="#EE2E24" quantity="12" label=" 10  — &lt;12" />
+              <ColorMapEntry color="#963F39" quantity="20" label=" >12" />
               
             </ColorMap>
           </RasterSymbolizer>
