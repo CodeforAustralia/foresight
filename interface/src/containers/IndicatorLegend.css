@@ -6,3 +6,7 @@
 .c-horizontal-rule {
   border: 1px solid #eee;
 }
+
+.c-indicator-legend__metadata {
+  font-size: 0.75em;
+}

@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import './IndicatorLegend.css'
 import Collapsible from 'react-collapsible';
 import { geoserverBase } from '../config/environment.js'
-
+import Moment from 'react-moment'
+import 'moment-timezone';
 
 let IndicatorLegend = ({ dispatch, indicators, layers }) => {
   let active_indicators = indicators.filter(layer => layer.active === true);
@@ -11,7 +12,6 @@ let IndicatorLegend = ({ dispatch, indicators, layers }) => {
   return (
     <Collapsible trigger={<h3 className="h-no-top-margin">Legend</h3>}>
       <div className="c-indicator-legend">
-      <h4>Active boundary layers</h4>
       {
         active_layers.map((value, i) => (
           <div className="c-indicator-legend__layer-key" key={i}>
@@ -20,13 +20,17 @@ let IndicatorLegend = ({ dispatch, indicators, layers }) => {
           </div>
         ))
       }
-      <hr className="c-horizontal-rule" />
-      <h4>Active indicator</h4>
       {
         active_indicators.map((value, i) => (
-          <div key={i}>
-          <p>{ value.displayName }</p>
+          <div className="c-indicator-legend__indicator-key" key={i}>
+          <h4 className="h-no-top-margin">{ value.displayName } {value.units ? "(" + value.units.trim() + ")" : ""}</h4>
           <img src={ geoserverBase + value.source + "REQUEST=GetLegendGraphic&format=image/png&layer=" + value.params.layers } className="c-indicator-navigator__legend" id={ "indicator-navigator-legend-" + i } alt="" />
+          <div class="c-indicator-legend__metadata">
+            <p><strong>Data updated:</strong></p>
+            <p><Moment tz="Australia/Melbourne" format=" dddd DD/MM/YYYY HH:mm ">{ value.creationTime }</Moment></p>
+            <p><strong>Data source: </strong></p>
+            <p>{ value.dataSource }</p>
+          </div>
           </div>
         ))
       }

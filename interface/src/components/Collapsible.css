@@ -1,6 +1,6 @@
 .Collapsible {
   position: relative;
-  min-width: 7em;
+  min-width: 6.5em;
 }
 
 .Collapsible__trigger::after {

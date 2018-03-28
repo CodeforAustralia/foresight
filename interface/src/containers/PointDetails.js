@@ -5,18 +5,14 @@ import './PointDetails.css'
 
 let PointDetails = ({ dispatch, point, layer, popup_data }) => {
   var popUp;
-  if(point.lat !== null){
+  if(point.lat !== null && popup_data.value !== null){
     popUp = <Popup position={ point }>
       <div className="c-point-details">
-        {
-          Object.keys(popup_data).map((value, i) => (
-            <div key={i}>
-              <span className="c-point-details__indicator">{value}: </span>
-              <span className="c-point-details__value">{parseFloat(popup_data[value]).toFixed(1)}</span>
-            </div>
-          ))
-        }
-        <p className="c-point-details__latlng">{point.lat.toFixed(3)},{point.lng.toFixed(3)}</p>
+        <div>
+          <p className="c-point-details__indicator">{popup_data.indicator.displayName}</p>
+          <p className="c-point-details__value">{parseFloat(popup_data.value).toFixed(popup_data.indicator.rounding_rule || 0) + " " + popup_data.indicator.units}</p>
+          <p className="c-point-details__latlng">Location: {popup_data.point.lat ? popup_data.point.lat.toFixed(3) : "Not set"},{popup_data.point.lng ? popup_data.point.lng.toFixed(3) : ""}</p>
+        </div>
       </div>
     </Popup>
   } else {

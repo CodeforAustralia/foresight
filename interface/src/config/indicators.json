@@ -1,6 +1,8 @@
 [
   {
     "displayName": "Surface temperature",
+    "units": "°C",
+    "rounding_rule": "1",
     "prefix": "T_SFC",
     "source": "geoserver/foresight/wms?",
     "params": {
@@ -15,6 +17,8 @@
   {
     "displayName": "Drought Factor",
     "prefix": "DF_SFC",
+    "units": "",
+    "rounding_rule": "1",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:DF_SFC",
@@ -28,6 +32,8 @@
   {
     "displayName": "Forest Fire Danger Index",
     "prefix": "FFDI_SFC",
+    "units": "",
+    "rounding_rule": "0",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:FFDI_SFC",
@@ -41,6 +47,8 @@
   {
     "displayName": "Grass Fire Danger Index",
     "prefix": "GFDI_SFC",
+    "units": "",
+    "rounding_rule": "0",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:GFDI_SFC",
@@ -54,6 +62,8 @@
   {
     "displayName": "Keetch-Byram Drought Index",
     "prefix": "KBDI_SFC",
+    "units": "",
+    "rounding_rule": "0",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:KBDI_SFC",
@@ -67,6 +77,8 @@
   {
     "displayName": "Relative Humidity",
     "prefix": "RH_SFC",
+    "units": "%",
+    "rounding_rule": "1",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:RH_SFC",
@@ -80,6 +92,8 @@
   {
     "displayName": "Wind Direction",
     "prefix": "Wind_Dir_SFC",
+    "units": "°",
+    "rounding_rule": "1",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Wind_Dir_SFC",
@@ -93,6 +107,8 @@
   {
     "displayName": "Wind Magnitude",
     "prefix": "Wind_Mag_SFC",
+    "units": "kts",
+    "rounding_rule": "1",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Wind_Mag_SFC",
@@ -106,6 +122,8 @@
   {
     "displayName": "Continuous Haines",
     "prefix": "CHaines_SFC",
+    "units": "",
+    "rounding_rule": "1",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:CHaines_SFC",
@@ -119,6 +137,8 @@
   {
     "displayName": "Curing",
     "prefix": "Curing_SFC",
+    "units": "%",
+    "rounding_rule": "1",
     "source": "geoserver/foresight/wms?",
     "params": {
       "layers": "foresight:Curing_SFC",

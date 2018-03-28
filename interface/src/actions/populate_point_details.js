@@ -4,9 +4,15 @@ import { geoserverBase } from '../config/environment.js'
 
 let _parsePointDetailsData = function(data){
   if(data.features.length > 0) {
-    return(data.features[0].properties)
+    let properties = data.features[0].properties
+    let data_keys = Object.keys(properties)
+    if(data_keys.length === 1) {
+      return properties[data_keys]
+    } else {
+      return null
+    }
   } else {
-    return ({})
+    return null
   }
 }
 
@@ -44,7 +50,7 @@ export const populatePointDetailsAsync = (point, layer, time) => {
       ).then(
         data => {
           dispatch(
-            populatePointDetails(data)
+            populatePointDetails(data, layer, point)
           )
         }
       )
@@ -52,9 +58,11 @@ export const populatePointDetailsAsync = (point, layer, time) => {
   }
 }
 
-export const populatePointDetails = (data) => {
+export const populatePointDetails = (data, layer, point) => {
   return {
     type: 'POPULATE_POINT_DETAILS',
-    data: _parsePointDetailsData(data)
+    value: _parsePointDetailsData(data),
+    indicator: layer,
+    point: point
   }
 }
