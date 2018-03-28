@@ -41,7 +41,7 @@ let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
               format={value.params.format}
               transparent={value.params.transparent}
               time={ iso_date }
-              opacity={0.8}
+              opacity={0.7}
               zIndex={2}/>
           ))
         }
