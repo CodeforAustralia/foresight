@@ -4,9 +4,10 @@ This is the repository for the readiness platform being developed by Code for Au
 
 The repository contains several different services which should be able to operate independently from each other. Current services:
 
-- **Geoserver** - serves the wms/wfs data
-- **API** - serves the restful json data
+- **Geoserver** - serves the WMS/WFS data
+- **API** - serves JSON data
 - **Interface** - displays the map
+- **Importer** - imports GZipped NetCDF files and processes their metadata into JSON files to be served by the API
 
 
 ## Setup
