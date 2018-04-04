@@ -45,8 +45,8 @@ const decompressBomNetcdf = (filePaths) => {
 const extractBomMeta = () => {
 
 	console.log("Extractor started ... ");
-	const source = "Bom";
-	const { meta, netcdf } = bomData;
+	const { name, meta, netcdf } = bomData;
+	const source = name || "BoM";
 	const promises = [];
 
 	_.forEach(bomFiles, (value, key) => {

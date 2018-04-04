@@ -1,5 +1,6 @@
 {
   "bomData": {
+    "name": "BoM",
     "src": "/Users/darion/foresight/bom/raw",
     "netcdf": "/Users/darion/foresight/bom/netcdf",
     "meta": "/Users/darion/foresight/bom/meta",
