@@ -15,6 +15,7 @@ services:
       - "8080:8080"
     volumes:
       - ./gsdata:/opt/geoserver/data_dir
+      - ./setenv.sh:/usr/local/tomcat/bin/setenv.sh
     networks:
       - geoservernet
 

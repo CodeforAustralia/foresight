@@ -27,14 +27,14 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2"
-          memory: 2048M
+          cpus: "10"
       restart_policy:
         condition: on-failure
     ports:
       - "8080:8080"
     volumes:
       - ./geoserver/gsdata:/opt/geoserver/data_dir
+      - ./geoserver/setenv.sh:/usr/local/tomcat/bin/setenv.sh
     networks:
       - geoservernet
 
