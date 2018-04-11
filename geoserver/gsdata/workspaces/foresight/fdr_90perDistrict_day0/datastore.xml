@@ -1,0 +1,23 @@
+<dataStore>
+  <id>DataStoreInfoImpl--94a249c:162ad44119f:-7ffc</id>
+  <name>fdr_90perDistrict_day0</name>
+  <description>CFA district fdr</description>
+  <type>Shapefile</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-3444ee3:161dfc40ed3:-7ffc</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="charset">ISO-8859-1</entry>
+    <entry key="filetype">shapefile</entry>
+    <entry key="create spatial index">true</entry>
+    <entry key="memory mapped buffer">false</entry>
+    <entry key="timezone">Etc/UTC</entry>
+    <entry key="enable spatial index">true</entry>
+    <entry key="namespace">http://geoserver.org/foresight</entry>
+    <entry key="cache and reuse memory maps">true</entry>
+    <entry key="url">file:data/shp/fdr_90perDistrict_day0.shp</entry>
+    <entry key="fstype">shape</entry>
+  </connectionParameters>
+  <__default>false</__default>
+</dataStore>
