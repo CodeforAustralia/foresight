@@ -101,6 +101,32 @@ module.exports.writeJsonFile = (dest, data) => {
 
 };
 
+module.exports.writeFile = (src, dest) => {
+
+	return new Promise(((resolve, reject) => {
+
+		let rd = null;
+		let wr = null;
+
+		try {
+			console.log(dest);
+			rd = fs.createReadStream(src);
+			wr = fs.createWriteStream(dest);
+
+			rd.on('error', reject);
+			wr.on('error', reject);
+			wr.on('finish', resolve);
+			rd.pipe(wr);
+		}
+		catch (error) {
+			rd.destroy();
+			wr.end();
+			reject(error);
+		}
+	}));
+
+};
+
 module.exports.fileExists = (filePath) => {
 	try {
 		return fs.statSync(filePath).isFile();
