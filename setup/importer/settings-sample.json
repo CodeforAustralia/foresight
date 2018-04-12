@@ -44,7 +44,7 @@
     "name": "CFA",
     "src": "/Users/darion/foresight/cfa/raw",
     "shp": "/Users/darion/foresight/cfa/shp",
-    "ext": [".dbf", ".shp", ".shx"]
+    "ext": ["dbf", "shp", "shx"]
   },
   "cfaFiles": {
     "fdr_district_day0": {

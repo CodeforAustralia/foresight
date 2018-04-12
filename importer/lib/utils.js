@@ -58,10 +58,10 @@ module.exports.decompress = (src, dest) => {
 				const input = fs.createReadStream(src);
 				const output = fs.createWriteStream(dest);
 
-				// extract the archive
+				// extractNetcdf the archive
 				input.pipe(zlib.createGunzip()).pipe(output);
 
-				// callback on extract completion
+				// callback on extractNetcdf completion
 				output.on('close', () => {
 					console.log("Unzipping to " + dest);
 					resolve({src, dest});
