@@ -4,6 +4,16 @@ This is the interface of the Readiness Platform. It uses [React](https://reactjs
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). There are instructions [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) about running and updating it.
 
+
+## Notes
+
+- All times should be stored in the state as `ISO8601` strings.
+
+Reducers - handle state change.
+Actions - sent to reducers to handle state change.
+Orchestrators - contain actions that need to happen in a certain order.
+Containers - components connected to state.
+
 ## Running locally
 
 Requirements:
@@ -14,7 +24,7 @@ Requirements:
 
 
 1. Install dependencies with `yarn install`.
-2. Copy the example environment file. 
+2. Copy the example environment file.
 ```sh
 cp .env.example .env
 ```

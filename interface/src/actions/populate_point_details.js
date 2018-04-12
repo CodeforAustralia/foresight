@@ -3,7 +3,7 @@ import { geoserverBase } from '../config/environment.js'
 // Populates indicator data for a given point.
 
 let _parsePointDetailsData = function(data){
-  if(data.features.length > 0) {
+  if(data.features && data.features.length > 0) {
     let properties = data.features[0].properties
     let data_keys = Object.keys(properties)
     if(data_keys.length === 1) {
@@ -40,8 +40,8 @@ let _constructRequestString = function(source, lat, lng, query_layers, time, bou
 
 export const populatePointDetailsAsync = (point, layer, time) => {
   return dispatch => {
-    if(layer === undefined || point.lat === null){
-      // no-op
+    if(layer === undefined || point.lat === null || time === undefined){
+      dispatch(populatePointDetails({}, point, layer, time))
     } else {
       fetch(
         _constructRequestString(layer.source, point.lat, point.lng, layer.params.layers, time)
@@ -52,7 +52,7 @@ export const populatePointDetailsAsync = (point, layer, time) => {
       ).then(
         data => {
           dispatch(
-            populatePointDetails(data, layer, point)
+            populatePointDetails(data, point, layer, time)
           )
         }
       )
@@ -60,11 +60,12 @@ export const populatePointDetailsAsync = (point, layer, time) => {
   }
 }
 
-export const populatePointDetails = (data, layer, point) => {
+export const populatePointDetails = (data, point, layer, time) => {
   return {
     type: 'POPULATE_POINT_DETAILS',
     value: _parsePointDetailsData(data),
     indicator: layer,
-    point: point
+    point: point,
+    time: time
   }
 }

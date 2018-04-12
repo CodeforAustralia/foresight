@@ -10,7 +10,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -25,7 +25,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -40,7 +40,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -55,7 +55,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -70,7 +70,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -85,7 +85,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -100,7 +100,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -115,7 +115,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -130,7 +130,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   },
@@ -145,7 +145,7 @@
       "format": "image/png",
       "transparent": "TRUE"
     },
-    "available_times": [],
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
     "active": false,
     "available": false
   }

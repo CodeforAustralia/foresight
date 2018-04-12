@@ -9,7 +9,7 @@ const middlewares = []
 const mockStore = configureStore(middlewares)
 
 it('renders without crashing', () => {
-  const initialState = { layers: {layers: []}, indicators: {indicators: []}, point: {lat: null, lng: null}, time: {selected_time: Date.now()} }
+  const initialState = { layers: {layers: []}, indicators: {indicators: [ {"available_times": {"intervals": [], "points": [], "contained_points": {}} } ]}, point: {lat: null, lng: null}, time: {selected_time: Date.now(), active_time: Date.now(), valid_times: []} }
   const store = mockStore(initialState)
   const div = document.createElement('div');
   ReactDOM.render(

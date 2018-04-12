@@ -25,7 +25,7 @@ let IndicatorLegend = ({ dispatch, indicators, layers }) => {
           <div className="c-indicator-legend__indicator-key" key={i}>
           <h4 className="h-no-top-margin">{ value.displayName } {value.units ? "(" + value.units.trim() + ")" : ""}</h4>
           <img src={ geoserverBase + value.source + "REQUEST=GetLegendGraphic&format=image/png&layer=" + value.params.layers } className="c-indicator-navigator__legend" id={ "indicator-navigator-legend-" + i } alt="" />
-          <div class="c-indicator-legend__metadata">
+          <div className="c-indicator-legend__metadata">
             <p><strong>Data updated:</strong></p>
             <p><Moment tz="Australia/Melbourne" format=" dddd DD/MM/YYYY HH:mm ">{ value.creationTime }</Moment></p>
             <p><strong>Data source: </strong></p>

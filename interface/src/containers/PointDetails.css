@@ -1,6 +1,9 @@
 .c-point-details {
   text-align: center;
 }
+.c-point-details p {
+  margin: 0.3em 0;
+}
 .c-point-details .c-point-details__indicator {
   font-weight: bold;
   margin-top: 0.2em;

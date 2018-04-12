@@ -3,7 +3,7 @@ const initialState = {value: null, indicator: {}, point: {}}
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case 'POPULATE_POINT_DETAILS':
-      let point_details = { value: action.value, indicator: action.indicator, point: action.point }
+      let point_details = { value: action.value, indicator: action.indicator, point: action.point, time: action.time }
       return point_details
     default:
       return state

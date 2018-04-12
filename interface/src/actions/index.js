@@ -1,6 +1,7 @@
 import { populatePointDetailsAsync, populatePointDetails } from './populate_point_details.js'
 import { updateIndicatorTimesAsync, updateIndicatorTimes } from './update_indicator_times.js'
 import { populateIndicatorDetails, populateIndicatorDetailsAsync } from './populate_indicator_details.js'
+import { findDisplayTimeFromAvailableTimes } from '../utils/time_utils.js'
 
 export const toggleLayer = (index) => {
   return {
@@ -27,6 +28,31 @@ export const setActiveTime = (selected_time) => {
   return {
     type: 'SET_ACTIVE_TIME',
     selected_time: selected_time
+  }
+}
+
+export const setDisplayTime = (display_time) => {
+  return {
+    type: 'SET_DISPLAY_TIME',
+    display_time: display_time
+  }
+}
+
+export const findAndSetDisplayTime = (selected_time, available_times = {}) => {
+  let display_time = findDisplayTimeFromAvailableTimes(selected_time, available_times)
+  console.log(selected_time)
+  console.log(available_times)
+  console.log(display_time)
+  return {
+    type: 'SET_DISPLAY_TIME',
+    display_time: display_time
+  }
+}
+
+export const populateValidTimes = (from_time) => {
+  return {
+    type: 'POPULATE_VALID_TIMES',
+    from_time: from_time
   }
 }
 

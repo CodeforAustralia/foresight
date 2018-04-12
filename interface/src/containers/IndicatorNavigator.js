@@ -1,7 +1,7 @@
 import React from 'react'
 import Collapsible from 'react-collapsible';
 import { connect } from 'react-redux'
-import { switchIndicators, populatePointDetailsAsync, updateIndicatorTimesAsync } from '../actions'
+import { updateIndicatorOrchestrator } from '../orchestrators'
 import './IndicatorNavigator.css'
 import '../components/Collapsible.css';
 
@@ -10,7 +10,7 @@ let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
   let available_indicators = indicators.filter(layer => layer.available === true);
   return (
     <div className="c-indicator-navigator">
-      <Collapsible trigger={<h3 className={"c-indicator-navigator__heading c-indicator-navigator__heading-" + active_indicators.length}>Indicators</h3>}>
+      <Collapsible open={true} trigger={<h3 className={"c-indicator-navigator__heading c-indicator-navigator__heading-" + active_indicators.length}>Indicators</h3>}>
           {
             available_indicators.map((value, i) => (
               <div className="c-indicator-navigator__option" key={i}>
@@ -19,9 +19,7 @@ let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
                   className="c-indicator-navigator__label"
                   htmlFor={"layer-toggle-" + i}
                   onClick={ function(e){
-                    dispatch(switchIndicators(i))
-                    dispatch(populatePointDetailsAsync(point, indicators[i], time.selected_time))
-                    dispatch(updateIndicatorTimesAsync(i, indicators))
+                    dispatch(updateIndicatorOrchestrator(i, indicators, time, point))
                   } }
                 >
                   {value.displayName}

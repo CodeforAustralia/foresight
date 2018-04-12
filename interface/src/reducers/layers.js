@@ -1,14 +1,7 @@
 import layers from '../config/layers'
+import { sortAlphabeticallyByDisplayName } from '../utils/layer_utils'
 
-let _sortAlphabeticallyByDisplayName = function(layers) {
-  return(layers.sort(function(a, b){
-      if(a.displayName < b.displayName) return -1;
-      if(a.displayName > b.displayName) return 1;
-      return 0;
-  }))
-}
-
-const initialState = { layers: _sortAlphabeticallyByDisplayName(layers) }
+const initialState = { layers: sortAlphabeticallyByDisplayName(layers) }
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {

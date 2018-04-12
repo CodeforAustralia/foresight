@@ -11,7 +11,7 @@ import PointDetails from './PointDetails.js'
 let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
   let active_layers = layers.filter(layer => layer.active === true);
   let active_indicators = indicators.filter(indicator => indicator.active === true);
-  let iso_date = new Date(time.selected_time).toISOString()
+  let display_time = time.display_time
   return (
     <div id="mapUI">
       <Map
@@ -22,7 +22,7 @@ let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
         id="map"
         onClick={function(e){
           dispatch(setActivePoint({lat: e.latlng.lat, lng: e.latlng.lng}))
-          dispatch(populatePointDetailsAsync({lat: e.latlng.lat, lng: e.latlng.lng}, active_indicators[0], time.selected_time))
+          dispatch(populatePointDetailsAsync({lat: e.latlng.lat, lng: e.latlng.lng}, active_indicators[0], time.display_time))
         }}
         closePopupOnClick={false}
       >
@@ -40,7 +40,7 @@ let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
               layers={value.params.layers}
               format={value.params.format}
               transparent={value.params.transparent}
-              time={ iso_date }
+              time={ display_time }
               opacity={0.7}
               zIndex={2}/>
           ))

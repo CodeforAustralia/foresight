@@ -1,14 +1,8 @@
 import indicators from '../config/indicators'
+import { getMostFrequentDuration, getIntervals } from '../utils/time_utils'
+import { sortAlphabeticallyByDisplayName } from '../utils/layer_utils'
 
-let _sortAlphabeticallyByDisplayName = function(layers) {
-  return(layers.sort(function(a, b){
-      if(a.displayName < b.displayName) return -1;
-      if(a.displayName > b.displayName) return 1;
-      return 0;
-  }))
-}
-
-const initialState = { indicators: _sortAlphabeticallyByDisplayName(indicators) }
+const initialState = { indicators: sortAlphabeticallyByDisplayName(indicators) }
 
 const reducer = (state = initialState, action) => {
   let newIndicators, newIndicator
@@ -42,9 +36,16 @@ const reducer = (state = initialState, action) => {
       newIndicators = state.indicators.map((value, index) => {
         newIndicator = {...value};
         if(index === action.index) {
-          newIndicator.available_times = action.times
+          let most_frequent_duration = getMostFrequentDuration(action.times)
+          let intervals = getIntervals(action.times, most_frequent_duration, action.validTimes)
           newIndicator.creationTime = action.creationTime
           newIndicator.dataSource = action.dataSource
+          newIndicator.most_frequent_duration = most_frequent_duration
+          newIndicator.available_times = {
+            points: action.times,
+            contained_points: intervals.all_valid_periods,
+            intervals: intervals.interval_objects
+          }
         }
         return newIndicator
       })
