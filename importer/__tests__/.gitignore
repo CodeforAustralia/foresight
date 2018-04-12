@@ -4,3 +4,6 @@ bom/meta/*
 
 bom/netcdf/*
 !bom/netcdf/.gitkeep
+
+bom/shp/*
+!bom/shp/.gitkeep

@@ -1,0 +1,15 @@
+<layer>
+  <name>fdr_90perLGA_day0</name>
+  <id>LayerInfoImpl-6111b7d7:162b23cf32b:-7fe4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-6111b7d7:162b23cf32b:-7fe8</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-6111b7d7:162b23cf32b:-7fe5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

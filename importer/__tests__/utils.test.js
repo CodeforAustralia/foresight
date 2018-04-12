@@ -2,19 +2,21 @@ const utils = require('../lib/utils');
 const reader = require('../lib/reader');
 
 const config = {
+	metaData: {
+		dest: `${__dirname}/bom/meta`
+	},
 	bomData: {
 		src: `${__dirname}/bom/raw`,
-		netcdf: `${__dirname}/bom/netcdf`,
-		meta: `${__dirname}/bom/meta`
+		netcdf: `${__dirname}/bom/netcdf`
 	},
-	bomFiles: {
-		curing: {
-			prefix: "Curing_SFC"
-		}
+	cfaData: {
+		src: `${__dirname}/bom/rawCfa`,
+		shp: `${__dirname}/bom/shp`,
+		ext: [".dbf", ".shp", ".shx"]
 	}
 };
 
-const { bomData } = config;
+const { metaData, bomData, cfaData } = config;
 const FilesModifiedAfterDate = new Date('2010-01-01');
 
 
@@ -85,8 +87,8 @@ describe('Utils writeJsonFile', () => {
 
 	test('writes json files into a folder', () => {
 
-		const { meta } = bomData;
-		const dest = `${meta}/index.json`;
+		const { dest: out } = metaData;
+		const dest = `${out}/index.json`;
 
 		const obj = { key: 'value' };
 
@@ -117,21 +119,57 @@ describe('Utils writeJsonFile', () => {
 
 });
 
-describe('Reader Extract', () => {
+describe('Utils writeFile', () => {
 
-	test('extracts file metadata into a folder', () => {
+	test('writes files into a folder', () => {
 
-		const { meta, netcdf } = bomData;
+		const { src, shp } = cfaData;
+		const source = `${src}/fdr_90perDistrict_day0.shp`;
+		const dest = `${shp}/fdr_90perDistrict_day0.shp`;
+
+		return utils.writeFile(source, dest)
+			.then(() => {
+				expect(utils.fileExists(dest)).toEqual(true);
+			})
+			.catch((err) => {
+				expect(err).toBeUndefined();
+			});
+	});
+
+	test('throws error if destination folder does not exist', () => {
+
+		const { src } = cfaData;
+		const nonexistentDest = `${__dirname}/bom/nonexistent`;
+		const source = `${src}/fdr_90perDistrict_day0.shp`;
+		const dest = `${nonexistentDest}/fdr_90perDistrict_day0.shp`;
+
+		return utils.writeFile(source, dest)
+			.then(() => {
+				expect(utils.fileExists(dest)).toEqual(false);
+			})
+			.catch((err) => {
+				expect(err).toBeDefined();
+			});
+	});
+
+});
+
+describe('Reader ExtractNetCdf', () => {
+
+	test('extracts netcdf file metadata into a folder', () => {
+
+		const { dest } = metaData;
+		const { netcdf } = bomData;
 
 		const pathSrc = `${netcdf}/Curing_SFC.nc`;
-		const pathDest = `${meta}/Curing_SFC.json`;
+		const pathDest = `${dest}/Curing_SFC.json`;
 
 		const result = {
 			prefix: 'Curing_SFC',
 			url: 'meta/Curing_SFC.json'
 		};
 
-		return reader.extract(pathSrc, pathDest, 'Curing_SFC', 'Bom')
+		return reader.extractNetcdf(pathSrc, pathDest, 'Curing_SFC', 'BoM')
 			.then((metaObj) => {
 				expect(metaObj).toEqual(result);
 			})
@@ -142,12 +180,57 @@ describe('Reader Extract', () => {
 
 	test('throws error if src netcdf file does not exist', () => {
 
-		const { meta, netcdf } = bomData;
+		const { dest } = metaData;
+		const { netcdf } = bomData;
 
 		const pathSrc = `${netcdf}/NONEXISTENT_SFC.nc`;
-		const pathDest = `${meta}/Curing_SFC.json`;
+		const pathDest = `${dest}/Curing_SFC.json`;
 
-		return reader.extract(pathSrc, pathDest, 'Curing_SFC', 'Bom')
+		return reader.extractNetcdf(pathSrc, pathDest, 'Curing_SFC', 'BoM')
+			.then((metaObj) => {
+				expect(metaObj).toBeUndefined();
+			})
+			.catch((err) => {
+				expect(err).toBeDefined();
+			});
+	});
+
+});
+
+
+describe('Reader ExtractShape', () => {
+
+	test('extracts shape file metadata into a folder', () => {
+
+		const { dest } = metaData;
+		const { shp } = cfaData;
+
+		const pathSrc = `${shp}/fdr_90perDistrict_day0.shp`;
+		const pathDest = `${dest}/fdr_90perDistrict_day0.json`;
+
+		const result = {
+			prefix: 'fdr_90perDistrict_day0',
+			url: 'meta/fdr_90perDistrict_day0.json'
+		};
+
+		return reader.extractShape(pathSrc, pathDest, 'fdr_90perDistrict_day0', 'CFA')
+			.then((metaObj) => {
+				expect(metaObj).toEqual(result);
+			})
+			.catch((err) => {
+				expect(err).toBeUndefined();
+			});
+	});
+
+	test('throws error if src netcdf file does not exist', () => {
+
+		const { dest } = metaData;
+		const { shp } = cfaData;
+
+		const pathSrc = `${shp}/NONEXISTENT_SFC.nc`;
+		const pathDest = `${dest}/fdr_90perDistrict_day0.json`;
+
+		return reader.extractShape(pathSrc, pathDest, 'fdr_90perDistrict_day0', 'CFA')
 			.then((metaObj) => {
 				expect(metaObj).toBeUndefined();
 			})

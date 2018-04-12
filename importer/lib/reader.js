@@ -9,7 +9,7 @@ const utils = require('./utils');
 const API_DEST = 'meta';
 
 
-module.exports.extract = (src, dest, prefix, source) => {
+module.exports.extractNetcdf = (src, dest, prefix, source) => {
 
 	return new Promise(((resolve, reject) => {
 
@@ -36,7 +36,7 @@ module.exports.extract = (src, dest, prefix, source) => {
 				console.log(dest);
 			}
 			else {
-				reject(`File does not exist: ${dest}`);
+				reject(`File does not exist: ${src}`);
 			}
 		}
 		catch (error) {
@@ -44,6 +44,66 @@ module.exports.extract = (src, dest, prefix, source) => {
 		}
 	}));
 
+};
+
+module.exports.extractShape = (src, dest, prefix, source) => {
+
+	return new Promise(((resolve, reject) => {
+
+		try {
+			if (utils.fileExists(src)) {
+
+				// create reader
+				const promise = shapefileReader(src);
+				const meta = getMetaTemplate();
+
+				promise.then((stats) => {
+
+					meta.prefix = prefix;
+					meta.source = source;
+					meta.creationTime = stats.ctime;
+					meta.timeArray.push(stats.mtime);
+
+					const json = JSON.stringify(meta);
+
+					fs.writeFile(dest, json, 'utf8', (err) => {
+						if (err)
+							reject(err);
+						else
+							resolve(createMetaObj(prefix));
+					});
+
+					console.log(dest);
+
+				}).catch(reject);
+
+			}
+			else {
+				reject(`File does not exist: ${src}`);
+			}
+		}
+		catch (error) {
+			reject(error);
+		}
+	}));
+
+};
+
+const shapefileReader = (file) => {
+
+	return new Promise(((resolve, reject) => {
+		try {
+			fs.stat(file, (error, stats) => {
+				if (error)
+					reject(error);
+				else
+					resolve(stats);
+			});
+		}
+		catch (error) {
+			reject(error);
+		}
+	}));
 };
 
 const netCDFReader = (file) => {

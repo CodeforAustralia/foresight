@@ -58,10 +58,10 @@ module.exports.decompress = (src, dest) => {
 				const input = fs.createReadStream(src);
 				const output = fs.createWriteStream(dest);
 
-				// extract the archive
+				// extractNetcdf the archive
 				input.pipe(zlib.createGunzip()).pipe(output);
 
-				// callback on extract completion
+				// callback on extractNetcdf completion
 				output.on('close', () => {
 					console.log("Unzipping to " + dest);
 					resolve({src, dest});
@@ -95,6 +95,32 @@ module.exports.writeJsonFile = (dest, data) => {
 			console.log(dest);
 		}
 		catch (error) {
+			reject(error);
+		}
+	}));
+
+};
+
+module.exports.writeFile = (src, dest) => {
+
+	return new Promise(((resolve, reject) => {
+
+		let rd = null;
+		let wr = null;
+
+		try {
+			console.log(dest);
+			rd = fs.createReadStream(src);
+			wr = fs.createWriteStream(dest);
+
+			rd.on('error', reject);
+			wr.on('error', reject);
+			wr.on('finish', resolve);
+			rd.pipe(wr);
+		}
+		catch (error) {
+			rd.destroy();
+			wr.end();
 			reject(error);
 		}
 	}));

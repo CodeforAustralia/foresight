@@ -1,9 +1,11 @@
 {
+  "metaData": {
+    "dest": "/Users/darion/foresight/meta"
+  },
   "bomData": {
     "name": "BoM",
     "src": "/Users/darion/foresight/bom/raw",
     "netcdf": "/Users/darion/foresight/bom/netcdf",
-    "meta": "/Users/darion/foresight/bom/meta",
     "ext": "nc.gz"
   },
   "bomFiles": {
@@ -36,6 +38,23 @@
     },
     "wind_mag": {
       "prefix": "Wind_Mag_SFC"
+    }
+  },
+  "cfaData": {
+    "name": "CFA",
+    "src": "/Users/darion/foresight/cfa/raw",
+    "shp": "/Users/darion/foresight/cfa/shp",
+    "ext": ["dbf", "shp", "shx"]
+  },
+  "cfaFiles": {
+    "fdr_district_day0": {
+      "prefix": "fdr_90perDistrict_day0"
+    },
+    "fdr_icc_day0": {
+      "prefix": "fdr_90perICC_day0"
+    },
+    "fdr_lga_day0": {
+      "prefix": "fdr_90perLGA_day0"
     }
   }
 }

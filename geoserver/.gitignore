@@ -1,7 +1,5 @@
 # netcdf files
 gsdata/data/netcdf
 
-# cfa files
-gsdata/data/cfa
-
-
+# cfa shape files
+gsdata/data/shp

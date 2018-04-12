@@ -3,36 +3,38 @@ const utils = require('./lib/utils');
 const reader = require('./lib/reader');
 const config = require('./config/settings.json');
 
-const { bomData, bomFiles } = config;
+const { metaData, bomData, bomFiles, cfaData, cfaFiles } = config;
 const FilesModifiedAfterDate = new Date('2010-01-01');
 
 
-// Finds the files of interest from bom data location
+// Process Bom files
 
-const findFiles = () => {
+let availableBomFiles = [];
 
-	console.log("Finder started ... ");
+const findBomFiles = () => {
+
+	console.log("Bom Finder started ... ");
 	const { src } = bomData;
 
 	return utils.finder(src, FilesModifiedAfterDate)
 		.then((filePaths) => {
 			console.log("Finder finished!");
-			return filePaths;
+			availableBomFiles = filePaths;
 		})
 		.catch((err) => {
 			console.log(err);
 		});
 };
 
-const decompressBomNetcdf = (filePaths) => {
+const decompressBomNetcdf = () => {
 
-	console.log("Decompressor started ... ");
+	console.log("Bom Decompressor started ... ");
 	const { netcdf } = bomData;
 	const promises = [];
 
 	_.forEach(bomFiles, (value, key) => {
 
-		const path = _.find(filePaths, (path) => _.includes(path, value.prefix));
+		const path = _.find(availableBomFiles, (path) => _.includes(path, value.prefix));
 		if (path) {
 			const pathDest = `${netcdf}/${value.prefix}.nc`;
 			promises.push(utils.decompress(path, pathDest));
@@ -44,33 +46,112 @@ const decompressBomNetcdf = (filePaths) => {
 
 const extractBomMeta = () => {
 
-	console.log("Extractor started ... ");
-	const { name, meta, netcdf } = bomData;
+	console.log("Bom Extractor started ... ");
+	const { name, netcdf } = bomData;
+	const { dest } = metaData;
 	const source = name || "BoM";
 	const promises = [];
 
 	_.forEach(bomFiles, (value, key) => {
 
-		const pathSrc = `${netcdf}/${value.prefix}.nc`;
-		const pathDest = `${meta}/${value.prefix}.json`;
-		promises.push(reader.extract(pathSrc, pathDest, value.prefix, source));
+		const path = _.find(availableBomFiles, (path) => _.includes(path, `${value.prefix}`));
+		if (path) {
+			const pathSrc = `${netcdf}/${value.prefix}.nc`;
+			const pathDest = `${dest}/${value.prefix}.json`;
+			promises.push(reader.extractNetcdf(pathSrc, pathDest, value.prefix, source));
+		}
 	});
+
+	return Promise.all(promises);
+};
+
+// Process CFA files
+
+let availableCfaFiles = [];
+
+const findCfaFiles = () => {
+
+	console.log("CFA Finder started ... ");
+	const { src } = cfaData;
+
+	return utils.finder(src, FilesModifiedAfterDate)
+		.then((filePaths) => {
+			console.log("Finder finished!");
+			availableCfaFiles = filePaths;
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
+const copyCfaFiles = () => {
+
+	console.log("CFA Copier started ... ");
+	const { shp, ext } = cfaData;
+	const promises = [];
+
+	const extensions = _.isArray(ext) ? ext : [];
+
+	_.forEach(cfaFiles, (value, key) => {
+
+		for (let i = 0; i < extensions.length; i++ ) {
+			const pathSrc = _.find(availableCfaFiles, (path) => _.includes(path, `${value.prefix}.${extensions[i]}`));
+			if (pathSrc) {
+				const pathDest = `${shp}/${value.prefix}.${extensions[i]}`;
+				promises.push(utils.writeFile(pathSrc, pathDest));
+			}
+		}
+	});
+
+	return Promise.all(promises);
+};
+
+const extractCfaMeta = () => {
+
+	console.log("CFA Extractor started ... ");
+	const { name, shp } = cfaData;
+	const { dest } = metaData;
+	const source = name || "CFA";
+	const promises = [];
+
+	_.forEach(cfaFiles, (value, key) => {
+
+		const path = _.find(availableCfaFiles, (path) => _.includes(path, `${value.prefix}.shp`));
+		if (path) {
+			const pathSrc = `${shp}/${value.prefix}.shp`;
+			const pathDest = `${dest}/${value.prefix}.json`;
+			promises.push(reader.extractShape(pathSrc, pathDest, value.prefix, source));
+		}
+	});
+
+	return Promise.all(promises);
+};
+
+const extractAll = () => {
+
+	const promises = [];
+	promises.push(extractBomMeta());
+	promises.push(extractCfaMeta());
 
 	return Promise.all(promises);
 };
 
 const createIndex = (metaObjs) => {
 
-	const { meta } = bomData;
-	const dest = `${meta}/index.json`;
-	return utils.writeJsonFile(dest, metaObjs);
+	const { dest } = metaData;
+	const combined = _.concat(metaObjs[0], metaObjs[1]);
+
+	const out = `${dest}/index.json`;
+	return utils.writeJsonFile(out, combined);
 };
 
 // Run
 
-findFiles()
+findBomFiles()
 	.then(decompressBomNetcdf)
-	.then(extractBomMeta)
+	.then(findCfaFiles)
+	.then(copyCfaFiles)
+	.then(extractAll)
 	.then(createIndex)
 	.then(() => {
 		console.log("Importer finished!");
