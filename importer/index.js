@@ -139,10 +139,10 @@ const extractAll = () => {
 const createIndex = (metaObjs) => {
 
 	const { dest } = metaData;
-	const merged = _.merge(metaObjs[0], metaObjs[1]);
+	const combined = _.concat(metaObjs[0], metaObjs[1]);
 
 	const out = `${dest}/index.json`;
-	return utils.writeJsonFile(out, merged);
+	return utils.writeJsonFile(out, combined);
 };
 
 // Run

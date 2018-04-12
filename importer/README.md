@@ -27,6 +27,10 @@ Requirements:
 `readiness-platform/api/public_html/meta`
 
 
+NOTE: Geoserver creates hidden files in the "netcdf" and "shp" folders that it uses for indexing. To avoid data corruption, it is best to completely
+replace these folders instead of overwriting some of their contents.
+
+
 ## Testing
 
 `yarn run test`
