@@ -6,7 +6,9 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div className="nav__logo"></div>
-        {this.props.children}
+        <div className="nav__contents">
+          {this.props.children}
+        </div>
       </div>
     );
   }

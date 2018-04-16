@@ -8,8 +8,8 @@ import '../components/Collapsible.css';
 let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
   let active_indicators = indicators.filter(layer => layer.active === true);
   return (
-    <div className="c-indicator-navigator">
-      <Collapsible open={true} trigger={<h3 className={"c-indicator-navigator__heading c-indicator-navigator__heading-" + active_indicators.length}>Indicators</h3>}>
+    <div className="c-navigator c-indicator-navigator">
+      <Collapsible open={true} trigger={<h3 className="c-indicator-navigator__heading c-navigator__heading">Indicators</h3>}>
           {
             indicators.map((value, i) => (
               <div className={"c-indicator-navigator__option " + (value.available ? "is-available" : "is-unavailable")} key={i}>

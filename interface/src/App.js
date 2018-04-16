@@ -12,16 +12,16 @@ class App extends Component {
     return (
       <div className="full-width nav__room">
         <Nav>
-        </Nav>
-        <div className="c-floating-navigators">
-          <div className="c-floating-navigators__navigator c-floating-navigators__navigator--left">
-            <IndicatorLegend />
-          </div>
-          <div className="c-floating-navigators__navigator c-floating-navigators__navigator--right">
+          <div className="c-nav__item">
             <LayerNavigator />
           </div>
-          <div className="c-floating-navigators__navigator c-floating-navigators__navigator--right">
+          <div className="c-nav__item">
             <IndicatorNavigator />
+          </div>
+        </Nav>
+        <div className="c-floating-navigators">
+          <div className="c-navigator c-floating-navigators__navigator c-floating-navigators__navigator--left">
+            <IndicatorLegend />
           </div>
         </div>
         <div className="c-bottom-navigator">

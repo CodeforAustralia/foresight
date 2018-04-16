@@ -8,6 +8,8 @@
   left: 0;
   width: 100%;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
 }
 .nav__room {
   padding-top: 60px;
@@ -23,7 +25,11 @@
   margin-left: 1em;
   display:inline-block;
 }
+.nav__contents {
+  display: flex;
+}
 
-.c-nav__element {
+.c-nav__item {
   display: inline-block;
+  padding: 1em;
 }
