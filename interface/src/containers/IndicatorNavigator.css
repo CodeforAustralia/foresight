@@ -8,6 +8,10 @@
   padding: 0.2em 2em 0.2em 0.2em;
   position: relative;
 }
+
+.c-indicator-navigator__option.is-unavailable {
+  color: #aaa;
+}
 .c-indicator-navigator__option:hover, .c-indicator-navigator__option:active {
   background-color: #eee;
 }

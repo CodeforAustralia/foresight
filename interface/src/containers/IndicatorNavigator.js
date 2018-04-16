@@ -7,19 +7,20 @@ import '../components/Collapsible.css';
 
 let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
   let active_indicators = indicators.filter(layer => layer.active === true);
-  let available_indicators = indicators.filter(layer => layer.available === true);
   return (
     <div className="c-indicator-navigator">
       <Collapsible open={true} trigger={<h3 className={"c-indicator-navigator__heading c-indicator-navigator__heading-" + active_indicators.length}>Indicators</h3>}>
           {
-            available_indicators.map((value, i) => (
-              <div className="c-indicator-navigator__option" key={i}>
-                <input className="c-indicator-navigator__input" type = "checkbox" checked={value.active} id={"layer-toggle-" + i}/>
+            indicators.map((value, i) => (
+              <div className={"c-indicator-navigator__option " + (value.available ? "is-available" : "is-unavailable")} key={i}>
+                <input className="c-indicator-navigator__input" type="checkbox" checked={value.active} id={"layer-toggle-" + i} />
                 <label
                   className="c-indicator-navigator__label"
                   htmlFor={"layer-toggle-" + i}
                   onClick={ function(e){
-                    dispatch(updateIndicatorOrchestrator(i, indicators, time, point))
+                    if(value.available){
+                      dispatch(updateIndicatorOrchestrator(i, indicators, time, point))
+                    }
                   } }
                 >
                   {value.displayName}
