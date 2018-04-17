@@ -36,7 +36,7 @@ let MapLayers = ({ dispatch, layers, indicators, point, time }) => {
           active_indicators.map((value, i) => (
             <WMSTileLayer
               key={i}
-              url={ (geoserverBase + value.source) }
+              url={ ((value.base || geoserverBase) + value.source) }
               layers={value.params.layers}
               format={value.params.format}
               transparent={value.params.transparent}

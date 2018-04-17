@@ -1,3 +1,5 @@
+import { startTime } from "../config/environment"
+
 const oneHourInMilliseconds = 3600000
 
 const _roundedHour = (time = new Date(Date.now())) => {
@@ -36,7 +38,7 @@ const _eachPeriodBetween = (first_time = _lastMidnight(), last_time = _oneWeekAf
   return(interpolated_times)
 }
 
-const initialState = { selected_time: _roundedHour(), valid_times: _eachPeriodBetween(), display_time: undefined }
+const initialState = { selected_time: _roundedHour(), valid_times: _eachPeriodBetween((startTime || _lastMidnight())), display_time: undefined }
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {

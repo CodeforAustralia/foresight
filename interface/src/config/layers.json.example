@@ -1,0 +1,79 @@
+[
+  {
+    "displayName": "Rock Properties",
+    "prefix": "Rock properties",
+    "source": "http://www.ga.gov.au/geophysics-rockpropertypub-gws/ga_rock_properties_wms/wms?",
+    "params": {
+      "layers": "temperature",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Urban water corporations",
+    "prefix": "WATER_URBAN_WATER_CORP",
+    "source": "http://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wms?",
+    "params": {
+      "layers": "WATER_URBAN_WATER_CORP",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Rural water corporations",
+    "prefix": "WATER_RURAL_WATER_CORP",
+    "source": "http://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wms?",
+    "params": {
+      "layers": "WATER_RURAL_WATER_CORP",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Crown land",
+    "prefix": "CROWNLAND_PLM25_STATE_FOREST",
+    "source": "http://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wms?",
+    "params": {
+      "layers": "CROWNLAND_PLM25_STATE_FOREST",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Vic Gov Region",
+    "prefix": "VMADMIN_AD_VICGOV_REGION",
+    "source": "http://services.land.vic.gov.au/catalogue/publicproxy/guest/dv_geoserver/wms?",
+    "params": {
+      "layers": "VMADMIN_AD_VICGOV_REGION",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "Murray-Darling Basin Water Resource Plan Areas – Surface Water",
+    "prefix": "Murray-Darling Basin Water Resource Plan Areas – Surface Water",
+    "source": "https://data.gov.au/geoserver/murray-darling-basin-water-resource-plan-areas-surface-water/wms?",
+    "params": {
+      "layers": "murray-darling-basin-water-resource-plan-areas-surface-water:ckan_7b0c274f_7f12_4062_9e54_5b8227ca20c4",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  },
+  {
+    "displayName": "ABC Local Radio stations",
+    "prefix": "Murray-Darling Basin Water Resource Plan Areas – Surface Water",
+    "source": "https://data.gov.au/geoserver/abc-local-stations/wms?",
+    "params": {
+      "layers": "abc-local-stations:ckan_d534c0e9_a9bf_487b_ac8f_b7877a09d162",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "active": false
+  }
+]

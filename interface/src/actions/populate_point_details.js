@@ -16,7 +16,7 @@ let _parsePointDetailsData = function(data){
   }
 }
 
-let _constructRequestString = function(source, lat, lng, query_layers, time, boundingBoxExtension = 0.02, requestFormat = "application/json", projectionFormat = "EPSG:4326") {
+let _constructRequestString = function(base, source, lat, lng, query_layers, time, boundingBoxExtension = 0.02, requestFormat = "application/json", projectionFormat = "EPSG:4326") {
   // Documentation for this request:
   // http://docs.geoserver.org/stable/en/user/services/wms/reference.html
   let baseRequestParameters = "SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&X=1&Y=1&WIDTH=2&HEIGHT=2"
@@ -24,7 +24,7 @@ let _constructRequestString = function(source, lat, lng, query_layers, time, bou
   let formatted_time = parsed_time.toISOString()
 
   let request_string = (
-    geoserverBase
+    base
     + source
     + baseRequestParameters
     + "&SRS=" + projectionFormat
@@ -43,8 +43,9 @@ export const populatePointDetailsAsync = (point, layer, time) => {
     if(layer === undefined || point.lat === null || time === undefined){
       dispatch(populatePointDetails({}, point, layer, time))
     } else {
+      let base = layer.base || geoserverBase
       fetch(
-        _constructRequestString(layer.source, point.lat, point.lng, layer.params.layers, time)
+        _constructRequestString(base, layer.source, point.lat, point.lng, layer.params.layers, time)
       ).then(
         response => {
           return response.json();

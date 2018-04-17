@@ -1,3 +1,7 @@
+.c-indicator-navigator {
+  max-width: 20em;
+}
+
 .c-indicator-navigator__heading {
   margin-top: 0;
   font-size: 1em;

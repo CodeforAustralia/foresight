@@ -1,4 +1,5 @@
 .c-layer-navigator {
+  max-width: 20em;
 }
 
 .c-layer-navigator__heading {

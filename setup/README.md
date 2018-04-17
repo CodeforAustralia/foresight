@@ -47,3 +47,37 @@ All the paths are relative to the project folder.
 - Mounted in the docker container as
 
 `geoserver/gsdata:/opt/geoserver/data_dir`
+
+## Interface
+
+### Initial configuration
+
+Copy the configuration data.
+
+From the `setup` directory:
+
+```sh
+cp interface/indicator-config.json ../interface/config/indicators.json
+cp interface/layer-config.json ../interface/config/layers.json
+cp interface/map-config.json ../interface/config/map_settings.json
+```
+
+### Build
+
+From the interface folder:
+
+```sh
+cd ../interface
+```
+
+Build the application:
+
+```sh
+yarn run build
+```
+
+Copy the build files into the API public HTML folder:
+
+```
+cp build/ ../api/public_html/
+```

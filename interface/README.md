@@ -24,11 +24,24 @@ Requirements:
 
 
 1. Install dependencies with `yarn install`.
-2. Copy the example environment file.
+
+2. Copy the example environment file, and change any variables necessary.
 ```sh
 cp .env.example .env
 ```
-3. Run the server with `yarn run start`. It will be available at [localhost:3000](localhost:3000).
+Set `REACT_APP_INDICATOR_META_BASE` to the API server serving the metadata.
+Set `REACT_APP_GEOSERVER_BASE` to the location of the Geoserver.
+Set `REACT_APP_START_TIME` if the app should have a set start time - otherwise it will default to midnight before the current time.
+
+3. Copy the example configuration files, and change anything necessary.
+```sh
+cp config/indicators.json.example config/indicators.json
+cp config/layers.json.example config/layers.json
+cp config/map_settings.json.example config/map_settings.json
+```
+The example files contain open data from data.gov.au.
+
+4. Run the server with `yarn run start`. It will be available at [localhost:3000](localhost:3000).
 
 ## Styleguide
 
