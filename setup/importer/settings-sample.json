@@ -47,14 +47,17 @@
     "ext": ["dbf", "shp", "shx"]
   },
   "cfaFiles": {
-    "fdr_district_day0": {
-      "prefix": "fdr_90perDistrict_day0"
+    "fdr_district": {
+      "prefix": "fdr_90perDistrict",
+      "layers": ["_day0", "_day1", "_day2", "_day3"]
     },
-    "fdr_icc_day0": {
-      "prefix": "fdr_90perICC_day0"
+    "fdr_icc": {
+      "prefix": "fdr_90perICC",
+      "layers": ["_day0", "_day1", "_day2", "_day3"]
     },
-    "fdr_lga_day0": {
-      "prefix": "fdr_90perLGA_day0"
+    "fdr_lga": {
+      "prefix": "fdr_90perLGA",
+      "layers": ["_day0", "_day1", "_day2", "_day3"]
     }
   }
 }

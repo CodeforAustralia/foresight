@@ -92,15 +92,25 @@ const copyCfaFiles = () => {
 
 	const extensions = _.isArray(ext) ? ext : [];
 
-	_.forEach(cfaFiles, (value, key) => {
+	_.forEach(cfaFiles, (shapeFile, key) => {
 
-		for (let i = 0; i < extensions.length; i++ ) {
-			const pathSrc = _.find(availableCfaFiles, (path) => _.includes(path, `${value.prefix}.${extensions[i]}`));
-			if (pathSrc) {
-				const pathDest = `${shp}/${value.prefix}.${extensions[i]}`;
-				promises.push(utils.writeFile(pathSrc, pathDest));
+		const availableLayers = [];
+
+		_.forEach(shapeFile.layers, (layer, key) => {
+
+			for (let i = 0; i < extensions.length; i++ ) {
+				const pathSrc = _.find(availableCfaFiles, (path) => _.includes(path, `${shapeFile.prefix}${layer}.${extensions[i]}`));
+				if (pathSrc) {
+					extensions[i] === 'shp' && availableLayers.push(layer);
+					const pathDest = `${shp}/${shapeFile.prefix}${layer}.${extensions[i]}`;
+					promises.push(utils.writeFile(pathSrc, pathDest));
+				}
 			}
-		}
+
+		});
+
+		shapeFile.availableLayers = availableLayers;
+
 	});
 
 	return Promise.all(promises);
@@ -114,13 +124,15 @@ const extractCfaMeta = () => {
 	const source = name || "CFA";
 	const promises = [];
 
-	_.forEach(cfaFiles, (value, key) => {
+	_.forEach(cfaFiles, (shapeFile, key) => {
 
-		const path = _.find(availableCfaFiles, (path) => _.includes(path, `${value.prefix}.shp`));
+		const firstLayer = shapeFile.availableLayers[0];
+
+		const path = _.find(availableCfaFiles, (path) => _.includes(path, `${shapeFile.prefix}${firstLayer}.shp`));
 		if (path) {
-			const pathSrc = `${shp}/${value.prefix}.shp`;
-			const pathDest = `${dest}/${value.prefix}.json`;
-			promises.push(reader.extractShape(pathSrc, pathDest, value.prefix, source));
+			const pathSrc = path;
+			const pathDest = `${dest}/${shapeFile.prefix}.json`;
+			promises.push(reader.extractShape(pathSrc, pathDest, shapeFile.prefix, source, shapeFile.availableLayers));
 		}
 	});
 

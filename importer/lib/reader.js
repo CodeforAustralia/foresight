@@ -46,7 +46,7 @@ module.exports.extractNetcdf = (src, dest, prefix, source) => {
 
 };
 
-module.exports.extractShape = (src, dest, prefix, source) => {
+module.exports.extractShape = (src, dest, prefix, source, availableLayers) => {
 
 	return new Promise(((resolve, reject) => {
 
@@ -62,7 +62,8 @@ module.exports.extractShape = (src, dest, prefix, source) => {
 					meta.prefix = prefix;
 					meta.source = source;
 					meta.creationTime = stats.ctime;
-					meta.timeArray.push(stats.mtime);
+					delete meta.timeArray;
+					meta.layerArray = getLayerArray(stats.mtimeMs, prefix, availableLayers);
 
 					const json = JSON.stringify(meta);
 
@@ -138,3 +139,11 @@ const getTimeVariable = (arr) => {
 		return moment(value, 'X').toISOString();
 	});
 };
+
+const getLayerArray = (mtimeMs, prefix, availableLayers) => {
+
+	return _.map(availableLayers, (layer, index) => {
+		return { [`${prefix}${layer}`]: moment(mtimeMs, 'x').startOf('day').add(index, 'day').toISOString() };
+	});
+};
+
