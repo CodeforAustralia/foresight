@@ -36,6 +36,7 @@ export const getMostFrequentDuration = (time_points) => {
 export const getIntervals = (time_points, duration, valid_times) => {
   let duration_milliseconds = toSeconds(parse(duration)) * 1000
   let all_valid_periods = {}
+  let valid_points = [];
 
   let interval_objects = time_points.map((value, index) => {
     let start_time = new Date(value).getTime()
@@ -59,6 +60,9 @@ export const getIntervals = (time_points, duration, valid_times) => {
     let contained_periods = []
     valid_times.forEach((valid_time, i)=>{
       let valid_timestamp = new Date(valid_time).getTime()
+      if(valid_timestamp === start_time) {
+        valid_points.push(valid_time)
+      }
       if(valid_timestamp >= start_time && valid_timestamp <= end_time_less_one_minute){
         contained_periods.push(valid_time)
         all_valid_periods[valid_time] = index
@@ -73,5 +77,5 @@ export const getIntervals = (time_points, duration, valid_times) => {
     })
   })
 
-  return({"interval_objects": interval_objects, "all_valid_periods": all_valid_periods})
+  return({"interval_objects": interval_objects, "all_valid_periods": all_valid_periods, "valid_points": valid_points})
 }

@@ -42,7 +42,7 @@ const reducer = (state = initialState, action) => {
           newIndicator.dataSource = action.dataSource
           newIndicator.most_frequent_duration = most_frequent_duration
           newIndicator.available_times = {
-            points: action.times,
+            points: intervals.valid_points,
             contained_points: intervals.all_valid_periods,
             intervals: intervals.interval_objects
           }

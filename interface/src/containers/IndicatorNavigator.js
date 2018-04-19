@@ -2,20 +2,19 @@ import React from 'react'
 import Collapsible from 'react-collapsible';
 import { connect } from 'react-redux'
 import { updateIndicatorOrchestrator } from '../orchestrators'
-import './IndicatorNavigator.css'
+import './Navigator.css'
 import '../components/Collapsible.css';
 
 let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
-  let active_indicators = indicators.filter(layer => layer.active === true);
   return (
-    <div className="c-navigator c-indicator-navigator">
-      <Collapsible open={true} trigger={<h3 className="c-indicator-navigator__heading c-navigator__heading">Indicators</h3>}>
+    <div className="c-navigator c-navigator--indicator">
+      <Collapsible open={true} trigger={<h3 className="c-navigator__heading">Indicators</h3>}>
           {
             indicators.map((value, i) => (
-              <div className={"c-indicator-navigator__option " + (value.available ? "is-available" : "is-unavailable")} key={i}>
-                <input className="c-indicator-navigator__input" type="checkbox" checked={value.active} id={"layer-toggle-" + i} />
+              <div className={"c-navigator__option " + (value.available ? "is-available" : "is-unavailable")} key={i}>
+                <input className="c-navigator__input" type="checkbox" checked={value.active} id={"layer-toggle-" + i} />
                 <label
-                  className="c-indicator-navigator__label"
+                  className="c-navigator__label"
                   htmlFor={"layer-toggle-" + i}
                   onClick={ function(e){
                     if(value.available){

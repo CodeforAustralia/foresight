@@ -5,6 +5,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
 .full-width {
   width: inherit;
 }
@@ -20,16 +21,16 @@ html, body {
   margin: 0.5em;
 }
 
-.c-navigator {
+.h-white-curved {
+  border-radius: 5px;
   background-color: #FFF;
+}
+
+.h-shadow-border {
   padding: 0.2em;
   box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
   border-radius: 5px;
   border: 1px solid #666666;
-}
-
-.c-navigator__heading {
-  margin: 0.2em 0;
 }
 
 .c-floating-navigators__navigator--left {
@@ -42,14 +43,11 @@ html, body {
 
 .c-bottom-navigator {
   position: absolute;
-  bottom: 3em;
+  bottom: 2em;
   left: 3em;
   right: 3em;
   width: calc(100% - 6em);
   z-index: 600;
-  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
-  background-color: #FFF;
-  padding: 0.5em;
 }
 
 .h-no-margin {

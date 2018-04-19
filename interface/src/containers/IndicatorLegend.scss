@@ -1,0 +1,31 @@
+.c-indicator-legend {
+  max-height: 80%;
+  &__metadata {
+    font-size: 0.75em;
+  }
+  &__layer-key {
+    padding: 0.2em 2em 0.2em 0;
+    position: relative;
+  }
+  &__layer-image {
+    position: absolute;
+    right: 0;
+  }
+  &__heading {
+    margin-bottom: 0.5em;
+    margin-top: 0;
+  }
+  &__indicator-key {
+    margin-top: 0.5em;
+  }
+}
+
+.c-metadata-list {
+  &__title {
+    font-weight: bold;
+    margin-top: 0.5em;
+  }
+  &__definition {
+    margin-left: 0;
+  }
+}

@@ -18,13 +18,13 @@ class App extends Component {
           <div className="c-nav__item">
             <IndicatorNavigator />
           </div>
-        </Nav>
-        <div className="c-floating-navigators">
-          <div className="c-navigator c-floating-navigators__navigator c-floating-navigators__navigator--left">
-            <IndicatorLegend />
+          <div className="c-nav__item">
+            <div className="c-navigator">
+              <IndicatorLegend />
+            </div>
           </div>
-        </div>
-        <div className="c-bottom-navigator">
+        </Nav>
+        <div className="c-bottom-navigator h-white-curved">
           <TemporalNavigator />
         </div>
         <MapLayers />

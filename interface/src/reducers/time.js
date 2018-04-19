@@ -26,7 +26,8 @@ const _oneWeekAfter = (time = _lastMidnight()) => {
   return(parsed_time.toISOString())
 }
 
-const _eachPeriodBetween = (first_time = _lastMidnight(), last_time = _oneWeekAfter(), period = oneHourInMilliseconds) => {
+const _eachPeriodBetween = (first_time = _lastMidnight(), last_time, period = oneHourInMilliseconds) => {
+  last_time = last_time || _oneWeekAfter(first_time)
   let parsed_first_time = Date.parse(first_time)
   let parsed_last_time = Date.parse(last_time)
   let time_between_first_and_last_times = parsed_last_time - parsed_first_time

@@ -4,4 +4,8 @@
 }
 #mapUI {
   height: 100%;
+  cursor: pointer;
+}
+.leaflet-grab {
+  cursor: inherit;
 }

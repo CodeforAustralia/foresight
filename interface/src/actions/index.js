@@ -40,9 +40,6 @@ export const setDisplayTime = (display_time) => {
 
 export const findAndSetDisplayTime = (selected_time, available_times = {}) => {
   let display_time = findDisplayTimeFromAvailableTimes(selected_time, available_times)
-  console.log(selected_time)
-  console.log(available_times)
-  console.log(display_time)
   return {
     type: 'SET_DISPLAY_TIME',
     display_time: display_time
@@ -53,6 +50,26 @@ export const populateValidTimes = (from_time) => {
   return {
     type: 'POPULATE_VALID_TIMES',
     from_time: from_time
+  }
+}
+
+export const togglePlaying = () => {
+  return {
+    type: 'TOGGLE_PLAYING'
+  }
+}
+
+export const stopPlaying = () => {
+  return {
+    type: 'STOP_PLAYING'
+  }
+}
+
+export const setTimer = (timer, next_time) => {
+  return {
+    type: 'SET_TIMER',
+    timer: timer,
+    next_time: next_time
   }
 }
 

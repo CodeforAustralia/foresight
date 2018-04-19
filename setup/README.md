@@ -57,9 +57,9 @@ Copy the configuration data.
 From the `setup` directory:
 
 ```sh
-cp interface/indicator-config.json ../interface/config/indicators.json
-cp interface/layer-config.json ../interface/config/layers.json
-cp interface/map-config.json ../interface/config/map_settings.json
+cp interface/indicator-config.json ../interface/src/config/indicators.json
+cp interface/layer-config.json ../interface/src/config/layers.json
+cp interface/map-config.json ../interface/src/config/map_settings.json
 ```
 
 ### Build

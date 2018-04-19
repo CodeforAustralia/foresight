@@ -1,3 +1,4 @@
 src/config/indicators.json
 src/config/layers.json
 src/config/map_settings.json
+*.css

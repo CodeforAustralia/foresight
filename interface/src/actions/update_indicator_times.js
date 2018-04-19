@@ -2,7 +2,6 @@ import Q from 'q';
 import { indicatorMetaBase } from '../config/environment.js'
 
 export const updateIndicatorTimesAsync = ( index, indicators, validTimes, deferred = Q.defer() ) => {
-  console.log("in action")
   let indicator = indicators[index]
   return dispatch => {
     if(indicator.metaLink === undefined || indicator.metaLink === null){
@@ -19,7 +18,6 @@ export const updateIndicatorTimesAsync = ( index, indicators, validTimes, deferr
           dispatch(
             updateIndicatorTimes(index, data.timeArray, data.creationTime, data.source, validTimes)
           );
-          console.log(deferred)
           deferred.resolve();
         }
       )

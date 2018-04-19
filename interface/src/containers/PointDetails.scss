@@ -1,0 +1,27 @@
+.c-point-details {
+  text-align: center;
+  p {
+    // to override leaflet paragraph styles
+    margin: 0.3em 0;
+  }
+  &__value {
+    font-size: 1.5em;
+  }
+  &__latlng {
+    font-size: 0.8em;
+  }
+  &__indicator {
+    font-weight: bold;
+    margin-top: 0.2em;
+  }
+}
+
+.leaflet-popup {
+  &-content-wrapper {
+    border: 1px solid black;
+  }
+  &-tip {
+    background: none;
+    border: 1px solid black;
+  }
+}

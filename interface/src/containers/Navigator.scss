@@ -1,0 +1,58 @@
+.c-navigator {
+  max-width: 20em;
+  background-color: #FFF;
+  padding: 0.2em 0.6em;
+  box-shadow: 2px 2px 10px rgba(20,20,20,0.2);
+  border-radius: 5px;
+  border: 1px solid #666666;
+  &__heading {
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.2em 0;
+  }
+  &__legend {
+    margin-right: 0.5em;
+  }
+  &__input{
+    display: none;
+  }
+  &__option {
+    padding: 0.2em 2em 0.2em 0.2em;
+    position: relative;
+    &.is-unavailable {
+      color: #aaa;
+    }
+    &:hover, &:active {
+      background-color: #eee;
+    }
+  }
+  &__legend {
+    height: 1.2em;
+    position: absolute;
+    right: -0.3em;
+    top: 0.5em;
+  }
+  &__label::before {
+    margin-right: 0.5em;
+  }
+  &--indicator {
+    .c-navigator__label::before {
+      content: "⚪️"
+    }
+    input[type="checkbox"]:checked+.c-navigator__label::before {
+      content: "🔘"
+    }
+  }
+  &--layer {
+    .c-navigator__label::before {
+      content: "⬜️"
+    }
+    input[type="checkbox"]:checked+.c-navigator__label::before {
+      content: "✅"
+    }
+  }
+  input[type="checkbox"]:checked+&__label {
+    font-weight: bold;
+  }
+}
