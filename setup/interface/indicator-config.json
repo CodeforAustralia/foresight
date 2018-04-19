@@ -60,6 +60,21 @@
     "available": false
   },
   {
+    "displayName": "Fuel Based Fire Danger Index",
+    "prefix": "MaxFDI_SFC",
+    "units": "",
+    "rounding_rule": "0",
+    "source": "geoserver/foresight/wms?",
+    "params": {
+      "layers": "foresight:MaxFDI_SFC",
+      "format": "image/png",
+      "transparent": "TRUE"
+    },
+    "available_times": {"intervals": [], "points": [], "contained_points": {}},
+    "active": false,
+    "available": false
+  },
+  {
     "displayName": "Keetch-Byram Drought Index",
     "prefix": "KBDI_SFC",
     "units": "",

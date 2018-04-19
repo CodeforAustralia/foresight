@@ -1,0 +1,41 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-45912786:162dc26fb2e:-7ff1</id>
+  <name>fdr_90perDistrict_day2</name>
+  <nativeName>fdr_90perDistrict_day2</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3444ee3:161dfc40ed3:-7ffb</id>
+  </namespace>
+  <title>fdr_90perDistrict_day2</title>
+  <abstract>fdr_90perDistrict_day2</abstract>
+  <keywords>
+    <string>features</string>
+    <string>fdr_90perDistrict_day2</string>
+  </keywords>
+  <srs>EPSG:404000</srs>
+  <nativeBoundingBox>
+    <minx>140.96246070400014</minx>
+    <maxx>149.97650000000036</maxx>
+    <miny>-39.135099999999966</miny>
+    <maxy>-33.98030779499995</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>140.96246070400014</minx>
+    <maxx>149.97650000000036</maxx>
+    <miny>-39.135099999999966</miny>
+    <maxy>-33.98030779499995</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="cachingEnabled">false</entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-45912786:162dc26fb2e:-7ff4</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

@@ -38,6 +38,9 @@
     },
     "wind_mag": {
       "prefix": "Wind_Mag_SFC"
+    },
+    "max_fdi": {
+      "prefix": "MaxFDI_SFC"
     }
   },
   "cfaData": {

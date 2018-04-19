@@ -1,0 +1,15 @@
+<layer>
+  <name>MaxFDI_SFC</name>
+  <id>LayerInfoImpl--2442a0fa:162db7f7583:-7fea</id>
+  <type>RASTER</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--2442a0fa:162db7f7583:-7fec</id>
+  </defaultStyle>
+  <resource class="coverage">
+    <id>CoverageInfoImpl--2442a0fa:162db7f7583:-7feb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>
