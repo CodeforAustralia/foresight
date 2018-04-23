@@ -22,7 +22,6 @@ Requirements:
 - [NPM](https://www.npmjs.com/)
 - [Yarn](https://yarnpkg.com/en/)
 
-
 1. Install dependencies with `yarn install`.
 
 2. Copy the example environment file, and change any variables necessary.
@@ -34,12 +33,13 @@ Set `REACT_APP_GEOSERVER_BASE` to the location of the Geoserver.
 Set `REACT_APP_START_TIME` if the app should have a set start time - otherwise it will default to midnight before the current time.
 
 3. Copy the example configuration files, and change anything necessary.
+
+The example files in this directory contain open data. Follow the directions in `setup/interface` for Predictive Services-specific configuration.
 ```sh
 cp config/indicators.json.example config/indicators.json
 cp config/layers.json.example config/layers.json
 cp config/map_settings.json.example config/map_settings.json
 ```
-The example files contain open data from data.gov.au.
 
 4. Run the server with `yarn run start`. It will be available at [localhost:3000](localhost:3000).
 
