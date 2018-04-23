@@ -12,17 +12,15 @@
         <Rule>
           <RasterSymbolizer>
             <Opacity>1.0</Opacity>
-            <ColorMap>
-              <ColorMapEntry color="#23dae7" quantity="0" label="0 - 5" />
-              <ColorMapEntry color="#69f2b7" quantity="5" label="5 - 10" />
-              <ColorMapEntry color="#81f785" quantity="10" label="10 - 15" />
-              <ColorMapEntry color="#f5f35e" quantity="15" label="15 - 20" />
-              <ColorMapEntry color="#f0b158" quantity="20" label="20 - 25" />
-              <ColorMapEntry color="#dd6423" quantity="25" label="25 - 30" />
-              <ColorMapEntry color="#ca0020" quantity="30" label="30 - 35" />
-              <ColorMapEntry color="#cc0064" quantity="35" label="35 - 40" />
-              <ColorMapEntry color="#a51c9e" quantity="40" label="40 - 45" />
-              <ColorMapEntry color="#6c1ca5" quantity="45" label="45" />
+            <ColorMap type="intervals">
+              <ColorMapEntry color="#ffbf00" quantity="45" label="0  — &lt;45 - N - NE" />
+              <ColorMapEntry color="#80ff00" quantity="90" label="45  — &lt;90 NE - E" />
+              <ColorMapEntry color="#00ff40" quantity="135" label="90  — &lt;135 E - SE" />
+              <ColorMapEntry color="#00ffff" quantity="180" label="135 – &lt; 180 SE - S" />
+              <ColorMapEntry color="#0040ff" quantity="225" label="180 – &lt; 225 S - SW" />
+              <ColorMapEntry color="#7f00ff" quantity="270" label="225 – &lt; 270 SW - W" />
+              <ColorMapEntry color="#ff00bf" quantity="315" label="270 – &lt; 315 W - NW" />
+              <ColorMapEntry color="#ff0000" quantity="361" label="315 – &lt; 360 NW - N" />
             </ColorMap>
           </RasterSymbolizer>
         </Rule>
