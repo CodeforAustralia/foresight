@@ -22,7 +22,9 @@ let IndicatorNavigator = ({ dispatch, indicators, point, time }) => {
                     }
                   } }
                 >
-                  {value.displayName}
+                  <abbr title={value.expandedAbbreviation}>
+                    {value.displayName}
+                  </abbr>
                 </label>
               </div>
             ))

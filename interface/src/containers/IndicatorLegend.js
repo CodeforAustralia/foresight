@@ -24,6 +24,7 @@ let IndicatorLegend = ({ dispatch, indicators, layers }) => {
         active_indicators.map((value, i) => (
           <div className="c-indicator-legend__indicator-key" key={i}>
           <h4 className="c-indicator-legend__heading">{ value.displayName } {value.units ? "(" + value.units.trim() + ")" : ""}</h4>
+          { value.expandedAbbreviation ? <h5 className="c-indicator-legend__subtitle">{value.expandedAbbreviation}</h5> : null }
           <img src={ (value.base || geoserverBase) + value.source + "REQUEST=GetLegendGraphic&format=image/png&layer=" + value.params.layers } className="c-indicator-navigator__legend" id={ "indicator-navigator-legend-" + i } alt="" />
           <dl className="c-indicator-legend__metadata c-metadata-list">
             <dt className="c-metadata-list__title">Data updated:</dt>

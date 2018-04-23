@@ -12,8 +12,14 @@
     right: 0;
   }
   &__heading {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     margin-top: 0;
+  }
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #666;
+    font-weight: normal;
   }
   &__indicator-key {
     margin-top: 0.5em;
