@@ -50,17 +50,7 @@ All the paths are relative to the project folder.
 
 ## Interface
 
-### Initial configuration
-
-Copy the configuration data.
-
-From the `setup` directory:
-
-```sh
-cp interface/indicator-config.json ../interface/src/config/indicators.json
-cp interface/layer-config.json ../interface/src/config/layers.json
-cp interface/map-config.json ../interface/src/config/map_settings.json
-```
+_For the DELWP instance of this application the layer, indicator, and settings configuration is kept in a separate repository._
 
 ### Build
 
