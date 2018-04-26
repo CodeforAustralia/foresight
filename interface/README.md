@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Notes
 
 - All times should be stored in the state as `ISO8601` strings.
+- Durations also handled as `ISO8601` strings.
 
 Reducers - handle state change.
 Actions - sent to reducers to handle state change.
@@ -34,7 +35,7 @@ Set `REACT_APP_START_TIME` if the app should have a set start time - otherwise i
 
 3. Copy the example configuration files, and change anything necessary.
 
-The example files in this directory contain open data. Follow the directions in `setup/interface` for Predictive Services-specific configuration.
+The example files in this directory contain open data so that you can get the interface up and running easily. If you are running the full application including Geoserver, you can copy from `indicators.json.geoserver-example`.
 ```sh
 cp config/indicators.json.example config/indicators.json
 cp config/layers.json.example config/layers.json
