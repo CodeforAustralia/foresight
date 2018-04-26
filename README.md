@@ -2,7 +2,7 @@
 
 This is the repository for Foresight, the readiness platform. It was initially developed by Code for Australia with Predictive Services, and is maintained by the Technical Solutions Unit at the Department of Environment, Land, Water & Planning.
 
-The repository contains several different services which should be able to operate independently from each other. Current services:
+The repository contains several different services which should be able to operate independently from each other:
 
 - **Geoserver** - serves the WMS/WFS data
 - **API** - serves JSON data
