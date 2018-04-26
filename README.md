@@ -1,6 +1,8 @@
 # Foresight
 
-This is the repository for the readiness platform being developed by Code for Australia with Predictive Services.
+![Foresight logo](.github/logo.png)
+
+This is the repository for Foresight, the readiness platform. It was initially developed by Code for Australia with Predictive Services, and is maintained by the Technical Solutions Unit at the Department of Environment, Land, Water & Planning.
 
 The repository contains several different services which should be able to operate independently from each other. Current services:
 
