@@ -46,11 +46,6 @@ General requirements:
 `docker swarm leave --force`
 
 
-## Environments
-
-There are currently no deployment environments for this repository. It is intended that it will be deployed to the Horizon environment.
-
-
 ## Contributing
 
 The contribution style we are using is [trunk based development](https://trunkbaseddevelopment.com/). This means:
